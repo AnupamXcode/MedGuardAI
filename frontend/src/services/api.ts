@@ -133,7 +133,8 @@ export interface HistoryRecord {
   results: PairInteractionResult[];
 }
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+const rawBase = (import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000').trim();
+const API_BASE = rawBase.replace(/\/+$/, '');
 const TOKEN_KEY = 'mediguard_auth_token';
 
 export function getStoredToken(): string | null {

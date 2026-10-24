@@ -31,15 +31,28 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# CORS configuration for frontend integration
-origins = os.getenv("CORS_ORIGINS", "*").split(",")
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins if origins != ["*"] else ["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# CORS configuration supporting localhost, Vercel deployments, and custom domains
+raw_origins = os.getenv("CORS_ORIGINS", "*")
+origins = [o.strip() for o in raw_origins.split(",") if o.strip()]
+
+if origins == ["*"] or not origins:
+    # Starlette requires allow_origin_regex when credentials are used with all origins
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origin_regex=r"^https?://.*",
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+else:
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=origins,
+        allow_origin_regex=r"^https://.*\.vercel\.app$",
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
 # Mount API endpoints
 app.include_router(health_router, prefix="/api")
