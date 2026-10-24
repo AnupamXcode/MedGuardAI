@@ -1,5 +1,70 @@
 import { useState } from 'react';
-import type { InteractionCheckResponse } from '../services/api';
+import type { InteractionCheckResponse, PairInteractionResult } from '../services/api';
+
+const getRiskLevel = (pair: PairInteractionResult) => {
+  if (pair.evidence_status === 'insufficient_evidence') {
+    return {
+      tier: 'No Known Clash',
+      badgeClass: 'bg-emerald-50 text-emerald-800 border-emerald-200',
+      dotClass: 'bg-emerald-500',
+      explanation: 'No dangerous interaction was found in published research datasets. Routine monitoring advised.',
+    };
+  }
+
+  const text = (pair.description || '').toLowerCase();
+  const highRiskPatterns = [
+    'bleeding',
+    'hemorrhage',
+    'cardiotoxicity',
+    'qt prolongation',
+    'arrhythmia',
+    'hypoglycemia',
+    'toxicity',
+    'fatal',
+    'apnea',
+    'respiratory depression',
+    'hyperkalemia',
+    'worsening of adverse effects',
+  ];
+
+  const moderateRiskPatterns = [
+    'metabolism',
+    'serum concentration',
+    'clearance',
+    'hypotension',
+    'hypertension',
+    'sedation',
+    'drowsiness',
+    'bradycardia',
+    'tachycardia',
+    'adverse effects',
+  ];
+
+  if (highRiskPatterns.some((pattern) => text.includes(pattern))) {
+    return {
+      tier: 'High Caution / Severe Risk',
+      badgeClass: 'bg-rose-50 text-rose-800 border-rose-200',
+      dotClass: 'bg-rose-500',
+      explanation: 'Both medicines may significantly amplify side effects (such as bleeding or heart strain). Talk to your doctor before combining.',
+    };
+  }
+
+  if (moderateRiskPatterns.some((pattern) => text.includes(pattern))) {
+    return {
+      tier: 'Moderate Warning',
+      badgeClass: 'bg-amber-50 text-amber-800 border-amber-200',
+      dotClass: 'bg-amber-500',
+      explanation: 'May alter drug breakdown or increase blood levels. A dose adjustment or scheduled spacing may be needed.',
+    };
+  }
+
+  return {
+    tier: 'Mild / Monitor',
+    badgeClass: 'bg-sky-50 text-sky-800 border-sky-200',
+    dotClass: 'bg-sky-500',
+    explanation: 'May cause minor changes in absorption or effectiveness. Discuss timing with your pharmacist.',
+  };
+};
 
 interface InteractionResultsViewProps {
   results: InteractionCheckResponse | null;
@@ -204,6 +269,7 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
           const isExpanded = expandedIndex === idx;
           const isVerified = pair.evidence_status === 'verified_database';
           const isPredicted = pair.evidence_status === 'model_prediction';
+          const risk = getRiskLevel(pair);
 
           return (
             <div
@@ -236,6 +302,12 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
                       <span className="text-outline text-sm font-semibold">✕</span>
                       <span className="font-title-md text-title-md text-on-surface font-bold">
                         {pair.drug_b_name}
+                      </span>
+
+                      {/* Risk Level Badge */}
+                      <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold border ${risk.badgeClass}`}>
+                        <span className={`w-1.5 h-1.5 rounded-full ${risk.dotClass}`}></span>
+                        <span>{risk.tier}</span>
                       </span>
 
                       {/* Evidence Badge */}
@@ -300,15 +372,21 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
                       </span>
                     </div>
 
-                    <div className="p-3.5 rounded-xl bg-surface-container-lowest border border-surface-variant/30 flex flex-col">
-                      <span className="text-xs text-on-surface-variant uppercase tracking-wider font-semibold mb-1">
-                        Risk Level
-                      </span>
-                      <span className="font-body-md text-body-md text-error font-medium">
-                        {pair.severity}
-                      </span>
-                      <span className="text-xs text-outline mt-1">
-                        Always consult your doctor or pharmacist before changing any medicines
+                    <div className="p-3.5 rounded-xl bg-surface-container-lowest border border-surface-variant/30 flex flex-col justify-between">
+                      <div className="flex items-center justify-between mb-1.5">
+                        <span className="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">
+                          Risk Level
+                        </span>
+                        <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold border ${risk.badgeClass}`}>
+                          <span className={`w-1.5 h-1.5 rounded-full ${risk.dotClass}`}></span>
+                          <span>{risk.tier}</span>
+                        </span>
+                      </div>
+                      <p className="font-body-sm text-body-sm text-on-surface font-medium leading-relaxed">
+                        {risk.explanation}
+                      </p>
+                      <span className="text-xs text-outline mt-2 pt-2 border-t border-surface-variant/20">
+                        Exact clinical risk depends on your personal prescribed dosage. Share this with your doctor.
                       </span>
                     </div>
                   </div>

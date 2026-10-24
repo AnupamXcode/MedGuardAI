@@ -176,7 +176,7 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   onFocus={() => { if (candidates.length > 0) setIsDropdownOpen(true); }}
-                  placeholder="Type a medicine name (for example: Aspirin, Metformin, or Ibuprofen)..."
+                  placeholder="Type a medicine name (for example: Metformin, Lisinopril, or Ibuprofen)..."
                   className="w-full h-12 pl-12 pr-24 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline border border-surface-variant focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-xs transition-all"
                 />
                 {isSearching && (
@@ -229,7 +229,7 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
 
             {/* Quick Helper Suggestion */}
             <div className="flex items-center justify-between text-on-surface-variant text-body-sm pt-1">
-              <span>Popular examples to try: Warfarin, Aspirin, Lisinopril, Metformin</span>
+              <span>Popular examples to try: Warfarin, Metformin, Lisinopril, Omeprazole</span>
               <button
                 type="button"
                 onClick={handleLoadSample}

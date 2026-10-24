@@ -609,7 +609,7 @@ export const ProfileSettingsModal: React.FC = () => {
                       type="text"
                       value={medQuery}
                       onChange={(e) => handleMedSearch(e.target.value)}
-                      placeholder="Search for a medicine (e.g. Aspirin, Metformin, Lisinopril)..."
+                      placeholder="Search for a medicine (e.g. Metformin, Lisinopril, Ibuprofen)..."
                       className="w-full pl-9 pr-3 py-1.5 text-xs rounded-lg border border-outline-variant bg-white text-charcoal"
                     />
 

@@ -663,7 +663,7 @@ export const OnboardingWizard: React.FC = () => {
                     type="text"
                     value={medQuery}
                     onChange={(e) => setMedQuery(e.target.value)}
-                    placeholder="Type medicine name (e.g. Aspirin, Metformin, Lisinopril)..."
+                    placeholder="Type medicine name (e.g. Metformin, Lisinopril, Ibuprofen)..."
                     className="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-slate-300 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-500 text-slate-900"
                   />
                   {isSearchingMeds && (
