@@ -1,0 +1,346 @@
+{
+  "1": {
+    "id": 1,
+    "template": "Drug a can cause a decrease in the absorption of Drug b resulting in a reduced serum concentration and potentially a decrease in efficacy."
+  },
+  "2": {
+    "id": 2,
+    "template": "Drug a can cause an increase in the absorption of Drug b resulting in an increased serum concentration and potentially a worsening of adverse effects."
+  },
+  "3": {
+    "id": 3,
+    "template": "The absorption of Drug b can be decreased when combined with Drug a."
+  },
+  "4": {
+    "id": 4,
+    "template": "The bioavailability of Drug b can be decreased when combined with Drug a."
+  },
+  "5": {
+    "id": 5,
+    "template": "The bioavailability of Drug b can be increased when combined with Drug a."
+  },
+  "6": {
+    "id": 6,
+    "template": "The metabolism of Drug b can be decreased when combined with Drug a."
+  },
+  "7": {
+    "id": 7,
+    "template": "The metabolism of Drug b can be increased when combined with Drug a."
+  },
+  "8": {
+    "id": 8,
+    "template": "The protein binding of Drug b can be decreased when combined with Drug a."
+  },
+  "9": {
+    "id": 9,
+    "template": "The serum concentration of Drug b can be decreased when it is combined with Drug a."
+  },
+  "10": {
+    "id": 10,
+    "template": "The serum concentration of Drug b can be increased when it is combined with Drug a."
+  },
+  "11": {
+    "id": 11,
+    "template": "The serum concentration of the active metabolites of Drug b can be increased when Drug b is used in combination with Drug a."
+  },
+  "12": {
+    "id": 12,
+    "template": "The serum concentration of the active metabolites of Drug b can be reduced when Drug b is used in combination with Drug a resulting in a loss in efficacy."
+  },
+  "13": {
+    "id": 13,
+    "template": "The therapeutic efficacy of Drug b can be decreased when used in combination with Drug a."
+  },
+  "14": {
+    "id": 14,
+    "template": "The therapeutic efficacy of Drug b can be increased when used in combination with Drug a."
+  },
+  "15": {
+    "id": 15,
+    "template": "Drug a may decrease the excretion rate of Drug b which could result in a higher serum level."
+  },
+  "16": {
+    "id": 16,
+    "template": "Drug a may increase the excretion rate of Drug b which could result in a lower serum level and potentially a reduction in efficacy."
+  },
+  "17": {
+    "id": 17,
+    "template": "Drug a may decrease the cardiotoxic activities of Drug b."
+  },
+  "18": {
+    "id": 18,
+    "template": "Drug a may increase the cardiotoxic activities of Drug b."
+  },
+  "19": {
+    "id": 19,
+    "template": "Drug a may increase the central neurotoxic activities of Drug b."
+  },
+  "20": {
+    "id": 20,
+    "template": "Drug a may increase the hepatotoxic activities of Drug b."
+  },
+  "21": {
+    "id": 21,
+    "template": "Drug a may increase the nephrotoxic activities of Drug b."
+  },
+  "22": {
+    "id": 22,
+    "template": "Drug a may increase the neurotoxic activities of Drug b."
+  },
+  "23": {
+    "id": 23,
+    "template": "Drug a may increase the ototoxic activities of Drug b."
+  },
+  "24": {
+    "id": 24,
+    "template": "Drug a may decrease effectiveness of Drug b as a diagnostic agent."
+  },
+  "25": {
+    "id": 25,
+    "template": "The risk of a hypersensitivity reaction to Drug b is increased when it is combined with Drug a."
+  },
+  "26": {
+    "id": 26,
+    "template": "The risk or severity of adverse effects can be increased when Drug a is combined with Drug b."
+  },
+  "27": {
+    "id": 27,
+    "template": "The risk or severity of bleeding can be increased when Drug a is combined with Drug b."
+  },
+  "28": {
+    "id": 28,
+    "template": "The risk or severity of heart failure can be increased when Drug b is combined with Drug a."
+  },
+  "29": {
+    "id": 29,
+    "template": "The risk or severity of hyperkalemia can be increased when Drug a is combined with Drug b."
+  },
+  "30": {
+    "id": 30,
+    "template": "The risk or severity of hypertension can be increased when Drug b is combined with Drug a."
+  },
+  "31": {
+    "id": 31,
+    "template": "The risk or severity of hypotension can be increased when Drug a is combined with Drug b."
+  },
+  "32": {
+    "id": 32,
+    "template": "The risk or severity of QTc prolongation can be increased when Drug a is combined with Drug b."
+  },
+  "33": {
+    "id": 33,
+    "template": "Drug a may decrease the analgesic activities of Drug b."
+  },
+  "34": {
+    "id": 34,
+    "template": "Drug a may decrease the anticoagulant activities of Drug b."
+  },
+  "35": {
+    "id": 35,
+    "template": "Drug a may decrease the antihypertensive activities of Drug b."
+  },
+  "36": {
+    "id": 36,
+    "template": "Drug a may decrease the antiplatelet activities of Drug b."
+  },
+  "37": {
+    "id": 37,
+    "template": "Drug a may decrease the bronchodilatory activities of Drug b."
+  },
+  "38": {
+    "id": 38,
+    "template": "Drug a may decrease the diuretic activities of Drug b."
+  },
+  "39": {
+    "id": 39,
+    "template": "Drug a may decrease the neuromuscular blocking activities of Drug b."
+  },
+  "40": {
+    "id": 40,
+    "template": "Drug a may decrease the sedative activities of Drug b."
+  },
+  "41": {
+    "id": 41,
+    "template": "Drug a may decrease the stimulatory activities of Drug b."
+  },
+  "42": {
+    "id": 42,
+    "template": "Drug a may decrease the vasoconstricting activities of Drug b."
+  },
+  "43": {
+    "id": 43,
+    "template": "Drug a may increase the adverse neuromuscular activities of Drug b."
+  },
+  "44": {
+    "id": 44,
+    "template": "Drug a may increase the analgesic activities of Drug b."
+  },
+  "45": {
+    "id": 45,
+    "template": "Drug a may increase the anticholinergic activities of Drug b."
+  },
+  "46": {
+    "id": 46,
+    "template": "Drug a may increase the anticoagulant activities of Drug b."
+  },
+  "47": {
+    "id": 47,
+    "template": "Drug a may increase the antihypertensive activities of Drug b."
+  },
+  "48": {
+    "id": 48,
+    "template": "Drug a may increase the antiplatelet activities of Drug b."
+  },
+  "49": {
+    "id": 49,
+    "template": "Drug a may increase the antipsychotic activities of Drug b."
+  },
+  "50": {
+    "id": 50,
+    "template": "Drug a may increase the arrhythmogenic activities of Drug b."
+  },
+  "51": {
+    "id": 51,
+    "template": "Drug a may increase the atrioventricular blocking (AV block) activities of Drug b."
+  },
+  "52": {
+    "id": 52,
+    "template": "Drug a may increase the bradycardic activities of Drug b."
+  },
+  "53": {
+    "id": 53,
+    "template": "Drug a may increase the bronchoconstrictory activities of Drug b."
+  },
+  "54": {
+    "id": 54,
+    "template": "Drug a may increase the central nervous system depressant (CNS depressant) activities of Drug b."
+  },
+  "55": {
+    "id": 55,
+    "template": "Drug a may increase the central nervous system depressant (CNS depressant) and hypertensive activities of Drug b."
+  },
+  "56": {
+    "id": 56,
+    "template": "Drug a may increase the constipating activities of Drug b."
+  },
+  "57": {
+    "id": 57,
+    "template": "Drug a may increase the dermatologic adverse activities of Drug b."
+  },
+  "58": {
+    "id": 58,
+    "template": "Drug a may increase the fluid retaining activities of Drug b."
+  },
+  "59": {
+    "id": 59,
+    "template": "Drug a may increase the hypercalcemic activities of Drug b."
+  },
+  "60": {
+    "id": 60,
+    "template": "Drug a may increase the hyperglycemic activities of Drug b."
+  },
+  "61": {
+    "id": 61,
+    "template": "Drug a may increase the hyperkalemic activities of Drug b."
+  },
+  "62": {
+    "id": 62,
+    "template": "Drug a may increase the hypertensive activities of Drug b."
+  },
+  "63": {
+    "id": 63,
+    "template": "Drug a may increase the hypocalcemic activities of Drug b."
+  },
+  "64": {
+    "id": 64,
+    "template": "Drug a may increase the hypoglycemic activities of Drug b."
+  },
+  "65": {
+    "id": 65,
+    "template": "Drug a may increase the hypokalemic activities of Drug b."
+  },
+  "66": {
+    "id": 66,
+    "template": "Drug a may increase the hyponatremic activities of Drug b."
+  },
+  "67": {
+    "id": 67,
+    "template": "Drug a may increase the hypotensive activities of Drug b."
+  },
+  "68": {
+    "id": 68,
+    "template": "Drug a may increase the hypotensive and central nervous system depressant (CNS depressant) activities of Drug b."
+  },
+  "69": {
+    "id": 69,
+    "template": "Drug a may increase the immunosuppressive activities of Drug b."
+  },
+  "70": {
+    "id": 70,
+    "template": "Drug a may increase the myelosuppressive activities of Drug b."
+  },
+  "71": {
+    "id": 71,
+    "template": "Drug a may increase the myopathic rhabdomyolysis activities of Drug b."
+  },
+  "72": {
+    "id": 72,
+    "template": "Drug a may increase the neuroexcitatory activities of Drug b."
+  },
+  "73": {
+    "id": 73,
+    "template": "Drug a may increase the neuromuscular blocking activities of Drug b."
+  },
+  "74": {
+    "id": 74,
+    "template": "Drug a may increase the orthostatic hypotensive activities of Drug b."
+  },
+  "75": {
+    "id": 75,
+    "template": "Drug a may increase the photosensitizing activities of Drug b."
+  },
+  "76": {
+    "id": 76,
+    "template": "Drug a may increase the QTc-prolonging activities of Drug b."
+  },
+  "77": {
+    "id": 77,
+    "template": "Drug a may increase the respiratory depressant activities of Drug b."
+  },
+  "78": {
+    "id": 78,
+    "template": "Drug a may increase the sedative activities of Drug b."
+  },
+  "79": {
+    "id": 79,
+    "template": "Drug a may increase the serotonergic activities of Drug b."
+  },
+  "80": {
+    "id": 80,
+    "template": "Drug a may increase the stimulatory activities of Drug b."
+  },
+  "81": {
+    "id": 81,
+    "template": "Drug a may increase the tachycardic activities of Drug b."
+  },
+  "82": {
+    "id": 82,
+    "template": "Drug a may increase the thrombogenic activities of Drug b."
+  },
+  "83": {
+    "id": 83,
+    "template": "Drug a may increase the ulcerogenic activities of Drug b."
+  },
+  "84": {
+    "id": 84,
+    "template": "Drug a may increase the vasoconstricting activities of Drug b."
+  },
+  "85": {
+    "id": 85,
+    "template": "Drug a may increase the vasodilatory activities of Drug b."
+  },
+  "86": {
+    "id": 86,
+    "template": "Drug a may increase the vasopressor activities of Drug b."
+  }
+}

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed-variant": "#00513f", "on-primary-container": "#c5ffe9", "surface-container-lowest": "#ffffff", "on-surface": "#111e1b", "surface-variant": "#d7e6e1", "outline-variant": "#bdc9c3", "surface-tint": "#006b55", "surface-container-highest": "#d7e6e1", "primary-fixed": "#98f4d5", "secondary-fixed": "#8bf5e1", "on-error": "#ffffff", "primary": "#00624d", "on-tertiary-fixed-variant": "#643f00", "primary-fixed-dim": "#7cd7ba", "on-secondary-fixed-variant": "#005046", "on-tertiary-fixed": "#2a1800", "tertiary-fixed-dim": "#ffb959", "on-tertiary": "#ffffff", "secondary": "#006b5e", "on-background": "#111e1b", "tertiary": "#794d00", "surface-dim": "#ceddd8", "surface-container-low": "#e8f7f2", "on-surface-variant": "#3e4944", "secondary-fixed-dim": "#6dd8c5", "on-secondary": "#ffffff", "on-secondary-fixed": "#00201b", "error-container": "#ffdad6", "inverse-on-surface": "#e5f4ef", "surface-container": "#e2f1ec", "on-tertiary-container": "#fff1e3", "on-error-container": "#93000a", "error": "#ba1a1a", "inverse-primary": "#7cd7ba", "surface-container-high": "#ddebe7", "primary-container": "#147d64", "tertiary-container": "#9a6300", "surface-bright": "#eefdf8", "on-secondary-container": "#006f62", "on-primary": "#ffffff", "background": "#eefdf8", "outline": "#6e7a74", "secondary-container": "#88f2de", "surface": "#eefdf8", "on-primary-fixed": "#002118", "inverse-surface": "#263330", "tertiary-fixed": "#ffddb6" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-mobile": "1rem", "margin": "2rem", "space-lg": "1.5rem", "gutter": "1.5rem", "space-xl": "2.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "space-md": "1rem" }, "fontFamily": { "label-md": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "body-md": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "title-lg": ["Plus Jakarta Sans"], "label-lg": ["Inter"], "display-lg-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="p-space-lg flex items-center gap-space-sm"><img alt="MediGuard AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XJU0IMwOLXLuy82E-Dd8KHoo80WmYDeIMott0GlxoxVLAIoPq3SNgCLns_P3D2pn0WZ65_7w-mzzbjy3MsnRp8-TyeVmwHUI8a3ilbLEYRlzxVSp6SolVKUH0DurD-7mXaEqkniIm9sQg6gdqHFxFzNcbHahrajfvRkc3YcUMB4cDKOaxkv9FtMJeiBZcqr7u5I2tJbXChcSASUBtGL3qfXsZf1UQHU6Tqde2lDtkHYFPzy2aTUCrfYg"/><div class="flex flex-col min-w-0"><span class="font-title-lg text-title-lg text-primary tracking-tight leading-none truncate">MediGuard AI</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate mt-1">Medication Safety Intelligence</span></div></div><div class="px-space-lg pb-space-md"><a class="w-full flex items-center justify-center gap-space-xs py-2.5 px-space-md bg-primary-container text-on-primary font-label-lg text-label-lg rounded-lg shadow-sm hover:bg-primary transition-colors" data-path="checker" href="#"><span class="material-symbols-outlined text-[18px]">add</span><span>+ New Check</span></a></div><nav class="flex-1 px-space-md space-y-1 overflow-y-auto" data-active-classes="bg-surface-container text-primary font-bold"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Overview</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors" data-path="checker" href="#"><span class="material-symbols-outlined text-[20px]">rule</span><span>Interaction Checker</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors" data-path="results" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span><span>Interaction Results</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors" data-path="my-medications" href="#"><span class="material-symbols-outlined text-[20px]">medication</span><span>My Medications</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors" data-path="conditions" href="#"><span class="material-symbols-outlined text-[20px]">clinical_notes</span><span>Health Conditions</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors" data-path="history" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span>Interaction History</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container hover:text-on-surface transition-colors" data-path="about" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>About &amp; Safety</span></a></nav><div class="p-space-md bg-surface-container-low m-space-md rounded-lg flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Clinical DB Active</span></div><span class="font-label-sm text-label-sm font-semibold text-primary px-2 py-0.5 bg-surface-container-lowest rounded">v4.2</span></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><span class="inline-flex items-center px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container text-primary font-semibold"><span class="material-symbols-outlined text-[14px] mr-1">verified</span>Live Database v4.2</span></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm text-right"><div class="flex flex-col"><span class="font-label-lg text-label-lg text-on-surface font-semibold">Dr. Sarah Jenkins</span><span class="font-body-sm text-body-sm text-on-surface-variant">PharmD, Clinical Pharmacist Specialist</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-surface-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp4MTU3A-OdEZ8jf7Ahbv9bBT8v3aKGeWhD7IarqFX8P3CsdsPMoLhsk-4BDu_rXptz5BK6Ta_wkmypVS5Ln7zMAqhnYgl8hvnzBv8ebeq9mnF_azeN36CAPeMP_zyqMN6gG6PMxqh43gZkz6LVjkDVE1N6nOcmVvkTj5fH6Q0zm-PY1UUDf6m4Nb6wElrAqGqLvmvVX0Xd68GTlJAz-zZqR5LpjjFF8MuR_m7mMssWNy7hnwMT2c"/></div></div></header><main class="relative pt-16 flex-1 w-full px-space-xl pb-12"><div class="flex flex-col w-full">
+<!-- Top Section: Header & Operational Context -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div class="flex flex-col max-w-2xl">
+<div class="flex items-center gap-space-xs text-primary mb-2">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Precision Pharmacovigilance Engine</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Check Drug Interactions &amp; Safety</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5 leading-relaxed">
+        Screen multi-drug combinations against known contraindications, adverse metabolic competition, and pre-existing patient health conditions.
+      </p>
+</div>
+<!-- Quick Metric Bar / Workspace State -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest px-4 py-2.5 rounded-xl shadow-sm self-start md:self-auto">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-md text-label-md text-on-surface">Live Protocol Session</span>
+</div>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Active Buffer: <strong class="text-on-surface font-semibold">3 Rx + 2 Conditions</strong></span>
+</div>
+</div>
+<!-- Main Workspace Grid: Two Columns (60% / 40%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Left Column: Input and Active Regimen Panel (7 of 12 cols = ~58.3%) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Card 1: Search & Autocomplete Interface -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm relative">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="flex items-center justify-center w-7 h-7 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[18px]">search_insights</span>
+</span>
+<h2 class="font-title-md text-title-md text-on-surface">Search &amp; Add Medications</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">RxNorm &amp; FDA Synced</span>
+</div>
+<!-- Search Bar with Input Controls -->
+<div class="relative mb-3">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-outline text-[22px] pointer-events-none">search</span>
+<input class="w-full h-12 pl-12 pr-28 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-sm transition-all" id="drug-search-input" placeholder="Search medicine by generic name, brand, or active substance (e.g. Warfarin, Aspirin, Metformin)..." type="text" value="Warf"/>
+<button class="absolute right-2 px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-1 shadow-sm hover:bg-primary transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add</span>
+</button>
+</div>
+<!-- Realistic Popover Autocomplete Dropdown Preview -->
+<div class="absolute left-0 right-0 top-14 bg-surface-container-lowest/95 backdrop-blur-md rounded-xl shadow-xl z-30 p-2 overflow-hidden">
+<div class="px-3 py-1.5 flex items-center justify-between border-b border-surface-container-high pb-2 mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Recommended Database Matches</span>
+<span class="font-label-sm text-label-sm text-primary">4 Available Candidates</span>
+</div>
+<div class="flex flex-col gap-1">
+<!-- Item 1 (Highlighted Active Match) -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors group">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-[18px]">pill</span>
+</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold group-hover:text-primary">Warfarin Sodium</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant">Coumadin</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Anticoagulant • 5mg oral tablet • Hepatic CYP2C9 metabolism</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-primary opacity-0 group-hover:opacity-100 transition-opacity">add_circle</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg hover:bg-surface-container cursor-pointer transition-colors group">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">medication</span>
+</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold group-hover:text-primary">Aspirin (Acetylsalicylic Acid)</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant">Bayer</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">NSAID / Antiplatelet • 81mg chewable • COX-1 irreversible inhibitor</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-primary opacity-0 group-hover:opacity-100 transition-opacity">add_circle</span>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg hover:bg-surface-container cursor-pointer transition-colors group">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">vaccines</span>
+</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold group-hover:text-primary">Metformin HCl</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant">Glucophage</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Biguanide Antidiabetic • 500mg ER tablet • Renal clearance</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-primary opacity-0 group-hover:opacity-100 transition-opacity">add_circle</span>
+</div>
+<!-- Item 4 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg hover:bg-surface-container cursor-pointer transition-colors group">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">pill</span>
+</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold group-hover:text-primary">Ibuprofen</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant">Advil</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">NSAID • 200mg softgel capsule • Non-selective COX</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-primary opacity-0 group-hover:opacity-100 transition-opacity">add_circle</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant pt-2">
+<span class="font-label-sm text-label-sm">Quick Add Popular:</span>
+<button class="px-2 py-0.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors">+ Atorvastatin</button>
+<button class="px-2 py-0.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors">+ Omeprazole</button>
+<button class="px-2 py-0.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors">+ Amlodipine</button>
+</div>
+</div>
+<!-- Card 2: Active Selected Medications List -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<h3 class="font-title-md text-title-md text-on-surface">Active Patient Regimen</h3>
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm">3 Configured</span>
+</div>
+<button class="font-label-sm text-label-sm text-error hover:text-on-error-container transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">clear_all</span>
+<span>Clear Regimen</span>
+</button>
+</div>
+<!-- Medication Cards Stack -->
+<div class="flex flex-col gap-3">
+<!-- Selected Drug 1 -->
+<div class="group bg-surface-container-low/60 hover:bg-surface-container-low transition-all duration-200 rounded-xl p-4 flex items-center justify-between">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-primary shadow-xs flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">medication_liquid</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Warfarin Sodium</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Anticoagulant</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container/60 text-error font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Narrow Index
+                  </span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">tune</span> Dosage: <strong class="text-on-surface font-medium">5 mg daily</strong></span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span> Oral Tablet</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Edit dose">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-error hover:bg-error-container/30 transition-colors" title="Remove medicine">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Selected Drug 2 -->
+<div class="group bg-surface-container-low/60 hover:bg-surface-container-low transition-all duration-200 rounded-xl p-4 flex items-center justify-between">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-primary shadow-xs flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">pill</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Aspirin</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Antiplatelet</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">OTC Cardioprotective</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">tune</span> Dosage: <strong class="text-on-surface font-medium">81 mg once daily</strong></span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span> Tablet (Chewable)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Edit dose">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-error hover:bg-error-container/30 transition-colors" title="Remove medicine">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Selected Drug 3 -->
+<div class="group bg-surface-container-low/60 hover:bg-surface-container-low transition-all duration-200 rounded-xl p-4 flex items-center justify-between">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-primary shadow-xs flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">vital_signs</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Lisinopril</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">ACE Inhibitor</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm">Antihypertensive</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">tune</span> Dosage: <strong class="text-on-surface font-medium">10 mg daily</strong></span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span> Oral Tablet</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Edit dose">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-error hover:bg-error-container/30 transition-colors" title="Remove medicine">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Add Another Medicine Placeholder Action -->
+<button class="w-full py-3.5 px-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low text-primary font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all group shadow-2xs" type="button">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">add_circle</span>
+<span>+ Add Another Medicine / Dietary Supplement</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Health Conditions & Risk Stratifiers -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col">
+<div class="flex flex-col mb-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">monitor_heart</span>
+<span>Health Conditions (Disease-Drug Contraindication Filter)</span>
+</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 Selected</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Pre-existing pathologies alter clearance, organ toxicity thresholds, and pharmacodynamic responses.
+          </p>
+</div>
+<!-- Chips Matrix -->
+<div class="flex flex-wrap gap-2.5">
+<!-- Chip 1 (Selected) -->
+<button class="px-3.5 py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md flex items-center gap-2 shadow-xs transition-all hover:bg-primary-container" type="button">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Hypertension (High Blood Pressure)</span>
+</button>
+<!-- Chip 2 (Selected) -->
+<button class="px-3.5 py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md flex items-center gap-2 shadow-xs transition-all hover:bg-primary-container" type="button">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Type 2 Diabetes</span>
+</button>
+<!-- Chip 3 (Unselected) -->
+<button class="px-3.5 py-2 rounded-xl bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center gap-2 hover:bg-surface-container-high hover:text-on-surface transition-all" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">add</span>
+<span>Dengue Fever (Past or Acute)</span>
+</button>
+<!-- Chip 4 (Unselected) -->
+<button class="px-3.5 py-2 rounded-xl bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center gap-2 hover:bg-surface-container-high hover:text-on-surface transition-all" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">add</span>
+<span>Chronic Kidney Disease (CKD)</span>
+</button>
+<!-- Chip 5 (Unselected) -->
+<button class="px-3.5 py-2 rounded-xl bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center gap-2 hover:bg-surface-container-high hover:text-on-surface transition-all" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">add</span>
+<span>Peptic Ulcer Disease (PUD)</span>
+</button>
+<!-- Chip 6 (Unselected) -->
+<button class="px-3.5 py-2 rounded-xl bg-surface-container-low text-on-surface-variant font-label-md text-label-md flex items-center gap-2 hover:bg-surface-container hover:text-on-surface transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">more_horiz</span>
+<span>Other / Custom Condition...</span>
+</button>
+</div>
+<!-- Allergy & Renal Context Bar -->
+<div class="mt-space-md p-3 rounded-xl bg-surface-container-low flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">warning</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold">Active Profile Alert Tag</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Patient Penicillin Allergy noted in chart • GFR 78 mL/min/1.73m²</span>
+</div>
+</div>
+<button class="font-label-sm text-label-sm text-primary font-semibold hover:underline">Edit Context</button>
+</div>
+</div>
+<!-- Flagship Call-to-Action Bar -->
+<div class="p-1 rounded-2xl bg-surface-container-lowest shadow-md">
+<a class="w-full h-14 bg-primary text-on-primary hover:bg-primary-container font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_8px_20px_-4px_rgba(20,125,100,0.35)] hover:shadow-[0_12px_28px_-6px_rgba(20,125,100,0.45)] active:scale-[0.99] group" data-path="results" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:scale-110 transition-transform">shield</span>
+<span class="tracking-wide">Check Interactions (3 Medicines, 2 Conditions)</span>
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Right Column: Safety Engine Overview, Analytical Guidance (5 of 12 cols = ~41.7%) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Card: Screening Engine Architecture -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col relative overflow-hidden">
+<!-- Header Banner with Graphic Badge -->
+<div class="flex items-start justify-between mb-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-2 text-primary mb-1">
+<span class="material-symbols-outlined text-[20px]">security</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-bold">MediGuard Core 4.2</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Safety Screening Engine</h3>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Dual AI / Rule DB</span>
+</div>
+<!-- Inline Visual: Molecular Pathway Interaction Map -->
+<div class="w-full bg-surface-container-low rounded-xl p-4 mb-space-md flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none"></div>
+<svg class="w-full max-w-[340px] h-auto text-primary" fill="none" viewbox="0 0 380 140" xmlns="http://www.w3.org/2000/svg">
+<!-- Central Processing Node -->
+<circle cx="190" cy="70" fill="#147D64" fill-opacity="0.12" r="28"></circle>
+<circle cx="190" cy="70" fill="#147D64" r="16"></circle>
+<path d="M185 70L189 74L196 66" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<!-- Nodes -->
+<!-- Left: Warfarin (Node A) -->
+<circle cx="60" cy="45" fill="#00624D" fill-opacity="0.15" r="14"></circle>
+<circle cx="60" cy="45" fill="#00624D" r="6"></circle>
+<text fill="#111E1B" font-size="10" font-weight="600" text-anchor="middle" x="60" y="74">Warfarin</text>
+<text fill="#3E4944" font-size="8" text-anchor="middle" x="60" y="86">CYP2C9</text>
+<!-- Top Right: Aspirin (Node B) -->
+<circle cx="320" cy="45" fill="#9A6300" fill-opacity="0.15" r="14"></circle>
+<circle cx="320" cy="45" fill="#9A6300" r="6"></circle>
+<text fill="#111E1B" font-size="10" font-weight="600" text-anchor="middle" x="320" y="74">Aspirin</text>
+<text fill="#3E4944" font-size="8" text-anchor="middle" x="320" y="86">Platelet Agg.</text>
+<!-- Bottom Left: Lisinopril (Node C) -->
+<circle cx="95" cy="115" fill="#006B5E" fill-opacity="0.15" r="12"></circle>
+<circle cx="95" cy="115" fill="#006B5E" r="5"></circle>
+<text fill="#111E1B" font-size="9" font-weight="600" text-anchor="middle" x="95" y="134">Lisinopril</text>
+<!-- Bottom Right: Renal / Condition (Node D) -->
+<circle cx="285" cy="115" fill="#BA1A1A" fill-opacity="0.15" r="12"></circle>
+<circle cx="285" cy="115" fill="#BA1A1A" r="5"></circle>
+<text fill="#111E1B" font-size="9" font-weight="600" text-anchor="middle" x="285" y="134">Hypertension</text>
+<!-- Dynamic Connecting Lines -->
+<path d="M74 48 C 110 55, 140 65, 174 68" stroke="#00624D" stroke-dasharray="3 3" stroke-width="1.8"></path>
+<path d="M306 48 C 270 55, 240 65, 206 68" stroke="#BA1A1A" stroke-width="2"></path>
+<path d="M107 115 C 135 105, 160 90, 178 78" stroke="#006B5E" stroke-width="1.5"></path>
+<path d="M273 115 C 245 105, 220 90, 202 78" stroke="#BA1A1A" stroke-dasharray="3 3" stroke-width="1.8"></path>
+</svg>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 text-center">
+            Multi-way metabolic node topology in execution buffer
+          </span>
+</div>
+<!-- 3 Key Screening Pillars -->
+<div class="flex flex-col gap-space-md">
+<!-- Pillar 1 -->
+<div class="flex items-start gap-3">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">biotech</span>
+</span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Multi-agent Pharmacokinetic Analysis</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-normal">
+                Detects CYP450 enzyme family competition (CYP2C9, CYP3A4, CYP2D6), competitive plasma protein binding displacement, and elimination bottlenecks.
+              </p>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="flex items-start gap-3">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-tertiary-container flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">stacked_bar_chart</span>
+</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Tri-tier Severity Stratification</span>
+</div>
+<div class="flex items-center gap-1.5 my-1.5">
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">error</span> Coral: Severe
+                </span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">warning</span> Amber: Mod
+                </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> Mint: Safe
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-normal">
+                Strict criteria separates catastrophic black-box warnings from mild absorption schedule adjustments.
+              </p>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="flex items-start gap-3">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">chat_bubble_outline</span>
+</span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Actionable Clinical Guidance</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-normal">
+                Generates plain-language talking points for patient-doctor consultations and actionable dose-timing recommendations.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Card: Clinical Privacy & Data Note -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col">
+<div class="flex items-center gap-2.5 text-on-surface mb-2">
+<span class="material-symbols-outlined text-[20px] text-primary">lock_clock</span>
+<h4 class="font-title-md text-title-md">Client-Side Verification Architecture</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          HIPAA &amp; GDPR compliant client-side evaluation protocol. No personal health records (PHR), patient identifiers, or geolocation credentials are persisted to external ad networks or LLM training pipelines.
+        </p>
+<div class="mt-3 pt-3 border-t border-surface-container flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">gpp_good</span> Local Encrypted Session
+          </span>
+<span class="font-label-sm text-label-sm text-primary font-medium">SOC2 Certified Infrastructure</span>
+</div>
+</div>
+<!-- Card: Evidence Baseline & Literature Source -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex items-start gap-3">
+<img class="w-14 h-14 rounded-xl object-cover flex-shrink-0 shadow-2xs" data-alt="Modern medical library scientific research database computer terminal showing pharmacopeia records and clinical trials in bright clean green lab lighting with bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIrRc-Q_OhspT7z_MrwEP4fmwaaoeBo9f9q0Ug_ewvswZ2KKgh2NYGpBU9zXHg8rhkSy2xVnp1RZfL5lj6_ZrNqWJz9VqAIzOFVMMkxEfTuC3Jc9Uwouc2p0LIcgYIo79fEi2NmHKsYqfscFDIPlUpbjTWuSQ_5_ETvMJO3p8c2xkBEWrHCzGY4IRhN-O8G8iqwvwikeLaJkuhaCqAelcZk9CjE8HF_M1xlmwpQb4UGpRk8jib8B0"/>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">Validated Clinical Corpus</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Continuously matched against NIH DailyMed, FDA Prescribing Labels, DrugBank 5.1, and curated peer-reviewed clinical literature (v2025.2 release).
+          </p>
+<div class="flex items-center gap-2 mt-2">
+<span class="font-label-sm text-label-sm text-primary font-semibold">Indexed Compounds: 14,280+</span>
+<span class="text-on-surface-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Daily Curated Updates</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-lowest py-space-sm px-space-xl shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="flex items-center justify-between text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-primary">info</span><span class="font-body-sm text-body-sm">Educational prototype: Does not replace professional medical judgment. Always consult a licensed clinician.</span></div><span class="font-label-sm text-label-sm text-on-surface-variant">© 2025 MediGuard AI. Clinical Intelligence Core.</span></div></footer></div></body></html>

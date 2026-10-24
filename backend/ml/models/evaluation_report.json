@@ -1,0 +1,81 @@
+{
+  "timestamp": "2026-10-23 23:52:24",
+  "model_architecture": "DeepDDI Multi-Layer Perceptron (Dense 256 -> Dense 128 -> Softmax 86)",
+  "features": "100-dimensional concatenated PCA structural similarity profiles (50D DrugA + 50D DrugB)",
+  "dataset_splits": {
+    "training_samples": 115446,
+    "validation_samples": 38419,
+    "testing_samples": 38419
+  },
+  "baseline_model": {
+    "name": "Multinomial SGD Classifier",
+    "test_accuracy": 0.5044118795387699,
+    "macro_f1": 0.2254947685683593,
+    "training_time_seconds": 12.031181573867798
+  },
+  "deepddi_model": {
+    "test_accuracy_top1": 0.8575704729430751,
+    "test_accuracy_top3": 0.9838621515396028,
+    "test_accuracy_top5": 0.9951326166740415,
+    "macro_precision": 0.8134553042969068,
+    "macro_recall": 0.7651840971521048,
+    "macro_f1": 0.7782936747822632,
+    "weighted_precision": 0.8591841588529818,
+    "weighted_recall": 0.8575704729430751,
+    "weighted_f1": 0.8573955266227128,
+    "training_time_seconds": 82.39242362976074,
+    "iterations_to_convergence": 27
+  },
+  "top_misclassifications": [
+    {
+      "true_type": 10,
+      "predicted_type": 6,
+      "misclassified_count": 495
+    },
+    {
+      "true_type": 6,
+      "predicted_type": 10,
+      "misclassified_count": 446
+    },
+    {
+      "true_type": 26,
+      "predicted_type": 6,
+      "misclassified_count": 330
+    },
+    {
+      "true_type": 6,
+      "predicted_type": 26,
+      "misclassified_count": 201
+    },
+    {
+      "true_type": 9,
+      "predicted_type": 10,
+      "misclassified_count": 165
+    },
+    {
+      "true_type": 9,
+      "predicted_type": 7,
+      "misclassified_count": 162
+    },
+    {
+      "true_type": 26,
+      "predicted_type": 10,
+      "misclassified_count": 161
+    },
+    {
+      "true_type": 10,
+      "predicted_type": 26,
+      "misclassified_count": 159
+    },
+    {
+      "true_type": 67,
+      "predicted_type": 26,
+      "misclassified_count": 158
+    },
+    {
+      "true_type": 26,
+      "predicted_type": 67,
+      "misclassified_count": 117
+    }
+  ]
+}

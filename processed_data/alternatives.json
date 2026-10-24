@@ -1,0 +1,1683 @@
+{
+  "Original drug member": [
+    "Alternative drug members predicted to lower the negative health effects"
+  ],
+  "Cyclophosphamide": [
+    "Busulfan",
+    "Pipobroman",
+    "Thiotepa",
+    "Temozolomide",
+    "Dacarbazine",
+    "Melphalan",
+    "Lomustine"
+  ],
+  "Belinostat": [
+    "Panobinostat"
+  ],
+  "Sulindac": [
+    "Dexibuprofen",
+    "Mefenamic acid",
+    "Etoricoxib",
+    "Meloxicam",
+    "Parecoxib",
+    "Tenoxicam",
+    "Etodolac",
+    "Fenoprofen",
+    "Nabumetone"
+  ],
+  "Pamidronate": [
+    "Alendronic acid",
+    "Risedronate",
+    "Ibandronate"
+  ],
+  "Amobarbital": [
+    "Heptabarbital",
+    "Secobarbital"
+  ],
+  "Meloxicam": [
+    "Dexibuprofen",
+    "Parecoxib",
+    "Etoricoxib",
+    "Etodolac"
+  ],
+  "Milnacipran": [
+    "Trimipramine",
+    "Protriptyline",
+    "Imipramine",
+    "Duloxetine",
+    "Venlafaxine",
+    "Desvenlafaxine"
+  ],
+  "Imipramine": [
+    "Trimipramine",
+    "Protriptyline",
+    "Venlafaxine",
+    "Desvenlafaxine",
+    "Duloxetine",
+    "Milnacipran"
+  ],
+  "Fluspirilene": [
+    "Methotrimeprazine",
+    "Sulpiride",
+    "Promazine",
+    "Haloperidol",
+    "Prochlorperazine",
+    "Molindone",
+    "Remoxipride"
+  ],
+  "Etodolac": [
+    "Dexibuprofen",
+    "Meloxicam",
+    "Mefenamic acid"
+  ],
+  "Levocetirizine": [
+    "Doxylamine",
+    "Astemizole",
+    "Bromodiphenhydramine",
+    "Bilastine",
+    "Diphenylpyraline",
+    "Phenindamine",
+    "Methdilazine",
+    "Azatadine",
+    "Mequitazine",
+    "Chlorcyclizine",
+    "Alimemazine",
+    "Loratadine",
+    "Chlorphenamine",
+    "Carbinoxamine",
+    "Acrivastine",
+    "Desloratadine",
+    "Triprolidine",
+    "Fexofenadine",
+    "Brompheniramine"
+  ],
+  "Clozapine": [
+    "Asenapine",
+    "Loxapine",
+    "Ziprasidone",
+    "Iloperidone",
+    "Olanzapine",
+    "Mesoridazine",
+    "Lurasidone",
+    "Quetiapine",
+    "Aripiprazole",
+    "Risperidone"
+  ],
+  "Mequitazine": [
+    "Doxylamine",
+    "Bromodiphenhydramine",
+    "Phenindamine",
+    "Carbinoxamine",
+    "Alimemazine",
+    "Methdilazine",
+    "Acrivastine",
+    "Azatadine"
+  ],
+  "Risperidone": [
+    "Asenapine",
+    "Iloperidone",
+    "Ziprasidone",
+    "Aripiprazole",
+    "Clozapine",
+    "Mesoridazine",
+    "Quetiapine",
+    "Loxapine",
+    "Olanzapine"
+  ],
+  "Meclizine": [
+    "Doxylamine",
+    "Azatadine",
+    "Mequitazine",
+    "Alimemazine",
+    "Methdilazine",
+    "Bilastine",
+    "Bromodiphenhydramine",
+    "Astemizole",
+    "Phenindamine",
+    "Desloratadine",
+    "Diphenylpyraline",
+    "Chlorphenamine",
+    "Carbinoxamine",
+    "Levocetirizine",
+    "Loratadine",
+    "Acrivastine",
+    "Brompheniramine",
+    "Chlorcyclizine",
+    "Triprolidine",
+    "Fexofenadine"
+  ],
+  "Brompheniramine": [
+    "Doxylamine",
+    "Bilastine",
+    "Mequitazine",
+    "Methdilazine",
+    "Astemizole",
+    "Diphenylpyraline",
+    "Bromodiphenhydramine",
+    "Phenindamine",
+    "Azatadine",
+    "Acrivastine",
+    "Alimemazine",
+    "Chlorcyclizine",
+    "Loratadine",
+    "Desloratadine"
+  ],
+  "Chlorphenamine": [
+    "Doxylamine",
+    "Bilastine",
+    "Azatadine",
+    "Mequitazine",
+    "Methdilazine",
+    "Astemizole",
+    "Bromodiphenhydramine",
+    "Diphenylpyraline",
+    "Alimemazine",
+    "Acrivastine",
+    "Phenindamine",
+    "Loratadine",
+    "Chlorcyclizine",
+    "Carbinoxamine",
+    "Brompheniramine",
+    "Desloratadine"
+  ],
+  "Dexbrompheniramine": [
+    "Doxylamine",
+    "Azatadine",
+    "Mequitazine",
+    "Methdilazine",
+    "Astemizole",
+    "Alimemazine",
+    "Bromodiphenhydramine",
+    "Bilastine",
+    "Acrivastine",
+    "Phenindamine",
+    "Chlorphenamine",
+    "Loratadine",
+    "Brompheniramine",
+    "Diphenylpyraline",
+    "Chlorcyclizine",
+    "Carbinoxamine",
+    "Levocetirizine",
+    "Desloratadine"
+  ],
+  "Quetiapine": [
+    "Ziprasidone",
+    "Asenapine",
+    "Loxapine",
+    "Iloperidone",
+    "Olanzapine",
+    "Mesoridazine",
+    "Aripiprazole",
+    "Risperidone",
+    "Clozapine",
+    "Lurasidone"
+  ],
+  "Asenapine": [
+    "Ziprasidone",
+    "Aripiprazole",
+    "Risperidone",
+    "Clozapine",
+    "Iloperidone",
+    "Olanzapine",
+    "Loxapine",
+    "Lurasidone",
+    "Mesoridazine",
+    "Quetiapine"
+  ],
+  "Efavirenz": [
+    "Tenofovir alafenamide",
+    "Delavirdine",
+    "Emtricitabine",
+    "Nevirapine",
+    "Didanosine",
+    "Zalcitabine",
+    "Tenofovir disoproxil",
+    "Stavudine",
+    "Rilpivirine",
+    "Zidovudine",
+    "Abacavir"
+  ],
+  "Carbinoxamine": [
+    "Doxylamine",
+    "Azatadine",
+    "Mequitazine",
+    "Phenindamine",
+    "Bromodiphenhydramine",
+    "Chlorphenamine",
+    "Bilastine",
+    "Alimemazine",
+    "Loratadine",
+    "Methdilazine",
+    "Astemizole",
+    "Brompheniramine",
+    "Diphenylpyraline",
+    "Acrivastine",
+    "Chlorcyclizine",
+    "Desloratadine"
+  ],
+  "Desloratadine": [
+    "Doxylamine",
+    "Bilastine",
+    "Bromodiphenhydramine",
+    "Astemizole",
+    "Mequitazine",
+    "Methdilazine",
+    "Phenindamine",
+    "Azatadine",
+    "Triprolidine",
+    "Acrivastine",
+    "Alimemazine",
+    "Carbinoxamine",
+    "Brompheniramine",
+    "Chlorphenamine",
+    "Meclizine",
+    "Cetirizine",
+    "Fexofenadine",
+    "Levocetirizine",
+    "Chlorcyclizine",
+    "Diphenylpyraline",
+    "Loratadine",
+    "Dexbrompheniramine",
+    "Cyclizine"
+  ],
+  "Trandolapril": [
+    "Captopril",
+    "Enalapril"
+  ],
+  "Fexofenadine": [
+    "Doxylamine",
+    "Astemizole",
+    "Bromodiphenhydramine",
+    "Azatadine",
+    "Mequitazine",
+    "Phenindamine",
+    "Carbinoxamine",
+    "Brompheniramine",
+    "Alimemazine",
+    "Methdilazine",
+    "Bilastine",
+    "Acrivastine",
+    "Loratadine",
+    "Levocetirizine",
+    "Chlorcyclizine",
+    "Diphenylpyraline",
+    "Chlorphenamine",
+    "Desloratadine"
+  ],
+  "Alprazolam": [
+    "Chlordiazepoxide",
+    "Clobazam",
+    "Lorazepam"
+  ],
+  "Etoricoxib": [
+    "Dexibuprofen",
+    "Fenoprofen",
+    "Parecoxib",
+    "Nabumetone",
+    "Tenoxicam",
+    "Sulindac",
+    "Etodolac",
+    "Meloxicam",
+    "Mefenamic acid"
+  ],
+  "Tolmetin": [
+    "Ketoprofen"
+  ],
+  "Butethal": [
+    "Heptabarbital",
+    "Secobarbital"
+  ],
+  "Fencamfamine": [
+    "Modafinil",
+    "Methylphenidate",
+    "Lisdexamfetamine"
+  ],
+  "Lurasidone": [
+    "Risperidone",
+    "Clozapine",
+    "Ziprasidone",
+    "Olanzapine",
+    "Aripiprazole",
+    "Asenapine",
+    "Loxapine",
+    "Mesoridazine",
+    "Quetiapine",
+    "Iloperidone"
+  ],
+  "Ethotoin": [
+    "Carbamazepine",
+    "Oxcarbazepine",
+    "Fosphenytoin"
+  ],
+  "Loratadine": [
+    "Mequitazine",
+    "Methdilazine",
+    "Astemizole",
+    "Doxylamine",
+    "Azatadine",
+    "Bromodiphenhydramine",
+    "Phenindamine",
+    "Chlorcyclizine",
+    "Alimemazine",
+    "Carbinoxamine",
+    "Acrivastine",
+    "Desloratadine",
+    "Chlorphenamine",
+    "Bilastine",
+    "Cetirizine",
+    "Fexofenadine",
+    "Dexbrompheniramine",
+    "Levocetirizine",
+    "Brompheniramine",
+    "Diphenylpyraline"
+  ],
+  "Desvenlafaxine": [
+    "Venlafaxine",
+    "Duloxetine",
+    "Imipramine",
+    "Trimipramine",
+    "Protriptyline"
+  ],
+  "Enalapril": [
+    "Captopril"
+  ],
+  "Sertraline": [
+    "Fluvoxamine",
+    "Amoxapine",
+    "Paroxetine",
+    "Citalopram",
+    "Escitalopram"
+  ],
+  "Atorvastatin": [
+    "Lovastatin",
+    "Pravastatin"
+  ],
+  "Ranitidine": [
+    "Cimetidine",
+    "Nizatidine",
+    "Famotidine"
+  ],
+  "Methylphenidate": [
+    "Modafinil",
+    "Lisdexamfetamine",
+    "Fencamfamine"
+  ],
+  "Ondansetron": [
+    "Dolasetron",
+    "Tropisetron",
+    "Granisetron",
+    "Palonosetron"
+  ],
+  "Cyclizine": [
+    "Doxylamine",
+    "Bilastine",
+    "Astemizole",
+    "Bromodiphenhydramine",
+    "Phenindamine",
+    "Diphenylpyraline",
+    "Azatadine",
+    "Mequitazine",
+    "Alimemazine",
+    "Carbinoxamine",
+    "Loratadine",
+    "Methdilazine",
+    "Chlorphenamine",
+    "Levocetirizine",
+    "Chlorcyclizine",
+    "Brompheniramine",
+    "Acrivastine",
+    "Desloratadine",
+    "Triprolidine",
+    "Fexofenadine"
+  ],
+  "Dihydroergotamine": [
+    "Frovatriptan"
+  ],
+  "Risedronate": [
+    "Pamidronate",
+    "Alendronic acid",
+    "Ibandronate"
+  ],
+  "Remifentanil": [
+    "Alfentanil",
+    "Sufentanil",
+    "Anileridine"
+  ],
+  "Triprolidine": [
+    "Doxylamine",
+    "Azatadine",
+    "Mequitazine",
+    "Alimemazine",
+    "Astemizole",
+    "Bromodiphenhydramine",
+    "Methdilazine",
+    "Phenindamine",
+    "Diphenylpyraline",
+    "Bilastine",
+    "Levocetirizine",
+    "Loratadine",
+    "Acrivastine",
+    "Chlorphenamine",
+    "Brompheniramine",
+    "Chlorcyclizine",
+    "Carbinoxamine",
+    "Desloratadine"
+  ],
+  "Molindone": [
+    "Methotrimeprazine",
+    "Promazine",
+    "Haloperidol",
+    "Prochlorperazine",
+    "Sulpiride",
+    "Remoxipride"
+  ],
+  "Prochlorperazine": [
+    "Haloperidol",
+    "Methotrimeprazine",
+    "Promazine",
+    "Sulpiride",
+    "Remoxipride",
+    "Fluspirilene"
+  ],
+  "Escitalopram": [
+    "Sertraline",
+    "Citalopram",
+    "Paroxetine",
+    "Fluvoxamine",
+    "Amoxapine"
+  ],
+  "Ethosuximide": [
+    "Trimethadione",
+    "Methsuximide"
+  ],
+  "Naftifine": [
+    "Butenafine",
+    "Tolnaftate"
+  ],
+  "Moricizine": [
+    "Disopyramide",
+    "Mexiletine",
+    "Quinidine",
+    "Ajmaline",
+    "Aprindine",
+    "Encainide",
+    "Tocainide"
+  ],
+  "Mesoridazine": [
+    "Ziprasidone",
+    "Olanzapine",
+    "Aripiprazole",
+    "Risperidone",
+    "Clozapine",
+    "Asenapine",
+    "Iloperidone",
+    "Quetiapine",
+    "Lurasidone",
+    "Loxapine"
+  ],
+  "Pergolide": [
+    "Ropinirole"
+  ],
+  "Diphenhydramine": [
+    "Mepyramine",
+    "Clemastine",
+    "Tripelennamine",
+    "Chloropyramine",
+    "Pheniramine",
+    "Isothipendyl"
+  ],
+  "Efinaconazole": [
+    "Luliconazole",
+    "Bifonazole"
+  ],
+  "Olanzapine": [
+    "Ziprasidone",
+    "Clozapine",
+    "Asenapine",
+    "Iloperidone",
+    "Aripiprazole",
+    "Risperidone",
+    "Quetiapine",
+    "Mesoridazine",
+    "Loxapine",
+    "Lurasidone"
+  ],
+  "Acepromazine": [
+    "Pipotiazine"
+  ],
+  "Chloroquine": [
+    "Primaquine"
+  ],
+  "Loxapine": [
+    "Ziprasidone",
+    "Olanzapine",
+    "Aripiprazole",
+    "Risperidone",
+    "Clozapine",
+    "Asenapine",
+    "Iloperidone",
+    "Quetiapine",
+    "Mesoridazine",
+    "Lurasidone"
+  ],
+  "Mepivacaine": [
+    "Ropivacaine",
+    "Bupivacaine",
+    "Levobupivacaine"
+  ],
+  "Remoxipride": [
+    "Promazine",
+    "Haloperidol",
+    "Methotrimeprazine",
+    "Sulpiride",
+    "Prochlorperazine",
+    "Molindone",
+    "Fluspirilene"
+  ],
+  "Cetirizine": [
+    "Doxylamine",
+    "Bilastine",
+    "Azatadine",
+    "Mequitazine",
+    "Diphenylpyraline",
+    "Methdilazine",
+    "Astemizole",
+    "Phenindamine",
+    "Alimemazine",
+    "Loratadine",
+    "Bromodiphenhydramine",
+    "Acrivastine",
+    "Carbinoxamine",
+    "Brompheniramine",
+    "Chlorphenamine",
+    "Chlorcyclizine",
+    "Levocetirizine"
+  ],
+  "Mefenamic acid": [
+    "Dexibuprofen",
+    "Parecoxib",
+    "Etoricoxib",
+    "Etodolac"
+  ],
+  "Fluvoxamine": [
+    "Escitalopram",
+    "Sertraline",
+    "Citalopram",
+    "Paroxetine",
+    "Amoxapine"
+  ],
+  "Sulpiride": [
+    "Methotrimeprazine",
+    "Molindone",
+    "Promazine",
+    "Haloperidol",
+    "Prochlorperazine",
+    "Remoxipride",
+    "Fluspirilene"
+  ],
+  "Reserpine": [
+    "Deserpidine"
+  ],
+  "Promazine": [
+    "Methotrimeprazine",
+    "Sulpiride",
+    "Haloperidol",
+    "Prochlorperazine",
+    "Remoxipride"
+  ],
+  "Haloperidol": [
+    "Methotrimeprazine",
+    "Promazine",
+    "Fluspirilene",
+    "Prochlorperazine",
+    "Sulpiride",
+    "Remoxipride",
+    "Molindone"
+  ],
+  "Bupivacaine": [
+    "Ropivacaine",
+    "Mepivacaine",
+    "Chloroprocaine"
+  ],
+  "Emtricitabine": [
+    "Delavirdine",
+    "Rilpivirine",
+    "Efavirenz",
+    "Nevirapine",
+    "Tenofovir disoproxil",
+    "Tenofovir alafenamide",
+    "Didanosine",
+    "Zidovudine"
+  ],
+  "Trimipramine": [
+    "Venlafaxine",
+    "Desvenlafaxine",
+    "Duloxetine",
+    "Milnacipran",
+    "Imipramine"
+  ],
+  "Iloperidone": [
+    "Clozapine",
+    "Olanzapine",
+    "Risperidone",
+    "Ziprasidone",
+    "Aripiprazole",
+    "Asenapine",
+    "Loxapine",
+    "Mesoridazine",
+    "Quetiapine",
+    "Lurasidone"
+  ],
+  "Spironolactone": [
+    "Eplerenone"
+  ],
+  "Tolcapone": [
+    "Entacapone"
+  ],
+  "Pancuronium": [
+    "Doxacurium chloride",
+    "Mivacurium",
+    "Vecuronium"
+  ],
+  "Vecuronium": [
+    "Doxacurium chloride",
+    "Mivacurium"
+  ],
+  "Tamsulosin": [
+    "Silodosin"
+  ],
+  "Aripiprazole": [
+    "Ziprasidone",
+    "Clozapine",
+    "Iloperidone",
+    "Risperidone",
+    "Asenapine",
+    "Loxapine",
+    "Olanzapine",
+    "Mesoridazine",
+    "Lurasidone",
+    "Quetiapine"
+  ],
+  "Carbamazepine": [
+    "Ethotoin",
+    "Fosphenytoin",
+    "Oxcarbazepine"
+  ],
+  "Desmopressin": [
+    "Terlipressin"
+  ],
+  "Lorazepam": [
+    "Chlordiazepoxide",
+    "Alprazolam",
+    "Clobazam"
+  ],
+  "Methyclothiazide": [
+    "Hydroflumethiazide"
+  ],
+  "Estrone": [
+    "Dienestrol",
+    "Tibolone",
+    "Estriol"
+  ],
+  "Sufentanil": [
+    "Alfentanil",
+    "Anileridine"
+  ],
+  "Pipecuronium": [
+    "Mivacurium",
+    "Doxacurium chloride"
+  ],
+  "Ropivacaine": [
+    "Mepivacaine",
+    "Chloroprocaine",
+    "Bupivacaine"
+  ],
+  "Quinidine": [
+    "Mexiletine",
+    "Moricizine",
+    "Aprindine",
+    "Disopyramide",
+    "Tocainide",
+    "Ajmaline",
+    "Encainide"
+  ],
+  "Parecoxib": [
+    "Dexibuprofen"
+  ],
+  "Losartan": [
+    "Irbesartan",
+    "Eprosartan",
+    "Olmesartan",
+    "Azilsartan medoxomil"
+  ],
+  "Tenofovir disoproxil": [
+    "Stavudine",
+    "Delavirdine",
+    "Emtricitabine",
+    "Rilpivirine",
+    "Efavirenz",
+    "Nevirapine",
+    "Didanosine",
+    "Zalcitabine",
+    "Abacavir",
+    "Zidovudine",
+    "Tenofovir alafenamide"
+  ],
+  "Amoxapine": [
+    "Fluvoxamine",
+    "Escitalopram",
+    "Citalopram",
+    "Paroxetine",
+    "Sertraline"
+  ],
+  "Duloxetine": [
+    "Trimipramine",
+    "Protriptyline",
+    "Imipramine",
+    "Venlafaxine",
+    "Desvenlafaxine"
+  ],
+  "Levobupivacaine": [
+    "Mepivacaine",
+    "Chloroprocaine",
+    "Ropivacaine",
+    "Bupivacaine"
+  ],
+  "Fludiazepam": [
+    "Clotiazepam",
+    "Adinazolam"
+  ],
+  "Azilsartan medoxomil": [
+    "Losartan",
+    "Irbesartan",
+    "Eprosartan",
+    "Olmesartan"
+  ],
+  "Clemastine": [
+    "Mepyramine",
+    "Tripelennamine",
+    "Isothipendyl",
+    "Chloropyramine",
+    "Diphenhydramine",
+    "Pheniramine"
+  ],
+  "Protriptyline": [
+    "Desvenlafaxine",
+    "Milnacipran",
+    "Venlafaxine",
+    "Duloxetine",
+    "Imipramine",
+    "Trimipramine"
+  ],
+  "Maprotiline": [
+    "Reboxetine",
+    "Viloxazine"
+  ],
+  "Methsuximide": [
+    "Trimethadione"
+  ],
+  "Ximelagatran": [
+    "Dabigatran etexilate",
+    "Argatroban"
+  ],
+  "Eprosartan": [
+    "Losartan",
+    "Irbesartan"
+  ],
+  "Salsalate": [
+    "Acetaminophen"
+  ],
+  "Frovatriptan": [
+    "Dihydroergotamine"
+  ],
+  "Oxycodone": [
+    "Ketobemidone"
+  ],
+  "Esmolol": [
+    "Bupranolol",
+    "Practolol"
+  ],
+  "Alimemazine": [
+    "Doxylamine",
+    "Bilastine",
+    "Astemizole",
+    "Diphenylpyraline",
+    "Bromodiphenhydramine",
+    "Phenindamine",
+    "Mequitazine",
+    "Methdilazine",
+    "Chlorphenamine",
+    "Carbinoxamine",
+    "Acrivastine",
+    "Azatadine"
+  ],
+  "Nadolol": [
+    "Bevantolol"
+  ],
+  "Fosinopril": [
+    "Enalapril",
+    "Captopril"
+  ],
+  "Halazepam": [
+    "Prazepam"
+  ],
+  "Telaprevir": [
+    "Paritaprevir",
+    "Boceprevir"
+  ],
+  "Fosphenytoin": [
+    "Carbamazepine",
+    "Oxcarbazepine"
+  ],
+  "Rosiglitazone": [
+    "Pioglitazone"
+  ],
+  "Lomustine": [
+    "Thiotepa",
+    "Pipobroman",
+    "Busulfan",
+    "Temozolomide",
+    "Dacarbazine",
+    "Cyclophosphamide",
+    "Melphalan"
+  ],
+  "Bifonazole": [
+    "Luliconazole",
+    "Efinaconazole"
+  ],
+  "Lopinavir": [
+    "Fosamprenavir",
+    "Indinavir",
+    "Amprenavir",
+    "Atazanavir",
+    "Saquinavir",
+    "Ritonavir",
+    "Tipranavir"
+  ],
+  "Secobarbital": [
+    "Heptabarbital"
+  ],
+  "Saquinavir": [
+    "Fosamprenavir",
+    "Indinavir",
+    "Ritonavir",
+    "Amprenavir",
+    "Atazanavir",
+    "Tipranavir",
+    "Lopinavir"
+  ],
+  "Oxcarbazepine": [
+    "Ethotoin",
+    "Fosphenytoin"
+  ],
+  "Cortisone acetate": [
+    "Rimexolone"
+  ],
+  "Panobinostat": [
+    "Belinostat"
+  ],
+  "Ropinirole": [
+    "Pergolide"
+  ],
+  "Cimetidine": [
+    "Ranitidine",
+    "Nizatidine",
+    "Famotidine",
+    "Roxatidine acetate"
+  ],
+  "Astemizole": [
+    "Phenindamine",
+    "Carbinoxamine",
+    "Alimemazine",
+    "Methdilazine",
+    "Acrivastine",
+    "Doxylamine",
+    "Azatadine",
+    "Desloratadine",
+    "Chlorphenamine",
+    "Bilastine",
+    "Cetirizine",
+    "Fexofenadine",
+    "Dexbrompheniramine",
+    "Levocetirizine",
+    "Brompheniramine",
+    "Bromodiphenhydramine",
+    "Cyclizine",
+    "Meclizine",
+    "Triprolidine",
+    "Mequitazine",
+    "Chlorcyclizine",
+    "Loratadine"
+  ],
+  "Perphenazine": [
+    "Acetophenazine"
+  ],
+  "Pravastatin": [
+    "Lovastatin",
+    "Atorvastatin"
+  ],
+  "Thiopental": [
+    "Hexobarbital"
+  ],
+  "Fimasartan": [
+    "Tasosartan"
+  ],
+  "Eplerenone": [
+    "Spironolactone"
+  ],
+  "Fesoterodine": [
+    "Darifenacin"
+  ],
+  "Omeprazole": [
+    "Pantoprazole"
+  ],
+  "Delavirdine": [
+    "Tenofovir alafenamide",
+    "Rilpivirine",
+    "Abacavir",
+    "Tenofovir disoproxil"
+  ],
+  "Fenoprofen": [
+    "Dexibuprofen",
+    "Parecoxib",
+    "Etoricoxib",
+    "Tenoxicam",
+    "Etodolac",
+    "Meloxicam",
+    "Mefenamic acid"
+  ],
+  "Temozolomide": [
+    "Cyclophosphamide",
+    "Pipobroman",
+    "Thiotepa",
+    "Dacarbazine"
+  ],
+  "Nortriptyline": [
+    "Desipramine"
+  ],
+  "Ritonavir": [
+    "Fosamprenavir",
+    "Lopinavir",
+    "Indinavir",
+    "Amprenavir",
+    "Tipranavir",
+    "Saquinavir",
+    "Atazanavir"
+  ],
+  "Amrinone": [
+    "Enoximone",
+    "Milrinone"
+  ],
+  "Terazosin": [
+    "Alfuzosin"
+  ],
+  "Tranylcypromine": [
+    "Isocarboxazid"
+  ],
+  "Tenoxicam": [
+    "Dexibuprofen",
+    "Meloxicam",
+    "Mefenamic acid",
+    "Etoricoxib"
+  ],
+  "Glipizide": [
+    "Mitiglinide",
+    "Repaglinide",
+    "Nateglinide"
+  ],
+  "Paroxetine": [
+    "Escitalopram",
+    "Citalopram",
+    "Fluvoxamine",
+    "Amoxapine",
+    "Sertraline"
+  ],
+  "Oxymetazoline": [
+    "Naphazoline"
+  ],
+  "Modafinil": [
+    "Lisdexamfetamine",
+    "Methylphenidate"
+  ],
+  "Chlordiazepoxide": [
+    "Clobazam",
+    "Alprazolam"
+  ],
+  "Citalopram": [
+    "Fluvoxamine",
+    "Amoxapine",
+    "Sertraline",
+    "Paroxetine"
+  ],
+  "Isocarboxazid": [
+    "Tranylcypromine"
+  ],
+  "Didanosine": [
+    "Tenofovir alafenamide",
+    "Delavirdine",
+    "Rilpivirine",
+    "Efavirenz",
+    "Nevirapine",
+    "Tenofovir disoproxil",
+    "Zidovudine"
+  ],
+  "Argatroban": [
+    "Dabigatran etexilate",
+    "Bivalirudin",
+    "Ximelagatran"
+  ],
+  "Flurazepam": [
+    "Midazolam"
+  ],
+  "Sulfanilamide": [
+    "Sulfamerazine"
+  ],
+  "Atazanavir": [
+    "Ritonavir",
+    "Amprenavir",
+    "Tipranavir",
+    "Lopinavir",
+    "Fosamprenavir",
+    "Saquinavir"
+  ],
+  "Acetophenazine": [
+    "Perphenazine",
+    "Fluphenazine"
+  ],
+  "Sulfadiazine": [
+    "Sulfamoxole"
+  ],
+  "Zidovudine": [
+    "Delavirdine",
+    "Rilpivirine",
+    "Efavirenz",
+    "Nevirapine",
+    "Tenofovir disoproxil",
+    "Emtricitabine",
+    "Didanosine",
+    "Tenofovir alafenamide",
+    "Stavudine",
+    "Zalcitabine",
+    "Abacavir"
+  ],
+  "Repaglinide": [
+    "Mitiglinide",
+    "Nateglinide",
+    "Chlorpropamide",
+    "Glipizide"
+  ],
+  "Terbutaline": [
+    "Pirbuterol",
+    "Clenbuterol",
+    "Salbutamol"
+  ],
+  "Salmeterol": [
+    "Formoterol",
+    "Olodaterol"
+  ],
+  "Fluphenazine": [
+    "Perphenazine",
+    "Acetophenazine"
+  ],
+  "Nabumetone": [
+    "Dexibuprofen",
+    "Parecoxib",
+    "Etoricoxib",
+    "Tenoxicam",
+    "Etodolac",
+    "Meloxicam",
+    "Mefenamic acid"
+  ],
+  "Venlafaxine": [
+    "Trimipramine",
+    "Imipramine",
+    "Protriptyline",
+    "Duloxetine",
+    "Desvenlafaxine",
+    "Milnacipran"
+  ],
+  "Disopyramide": [
+    "Moricizine",
+    "Mexiletine",
+    "Aprindine",
+    "Ajmaline",
+    "Quinidine",
+    "Encainide",
+    "Tocainide"
+  ],
+  "Nimesulide": [
+    "Ketoprofen",
+    "Tolmetin"
+  ],
+  "Allopurinol": [
+    "Febuxostat"
+  ],
+  "Mitomycin": [
+    "Plicamycin"
+  ],
+  "Balsalazide": [
+    "Mesalazine"
+  ],
+  "Glyburide": [
+    "Tolazamide"
+  ],
+  "Linagliptin": [
+    "Alogliptin",
+    "Saxagliptin",
+    "Vildagliptin",
+    "Sitagliptin"
+  ],
+  "Olmesartan": [
+    "Losartan",
+    "Irbesartan"
+  ],
+  "Oxymetholone": [
+    "Oxandrolone"
+  ],
+  "Testosterone": [
+    "Methyltestosterone"
+  ],
+  "Primaquine": [
+    "Chloroquine"
+  ],
+  "Alfentanil": [
+    "Anileridine",
+    "Sufentanil",
+    "Remifentanil"
+  ],
+  "Tadalafil": [
+    "Vardenafil",
+    "Avanafil",
+    "Udenafil"
+  ],
+  "Triazolam": [
+    "Temazepam"
+  ],
+  "Clobazam": [
+    "Chlordiazepoxide"
+  ],
+  "Doxorubicin": [
+    "Valrubicin",
+    "Idarubicin",
+    "Mitoxantrone"
+  ],
+  "Sulfisoxazole": [
+    "Sulfaphenazole"
+  ],
+  "Bivalirudin": [
+    "Dabigatran etexilate"
+  ],
+  "Abacavir": [
+    "Delavirdine",
+    "Rilpivirine",
+    "Efavirenz",
+    "Nevirapine",
+    "Tenofovir disoproxil",
+    "Tenofovir alafenamide",
+    "Didanosine",
+    "Zidovudine"
+  ],
+  "Busulfan": [
+    "Cyclophosphamide",
+    "Temozolomide",
+    "Dacarbazine",
+    "Pipobroman"
+  ],
+  "Isoflurane": [
+    "Sevoflurane"
+  ],
+  "Zafirlukast": [
+    "Pranlukast",
+    "Montelukast"
+  ],
+  "Pipobroman": [
+    "Cyclophosphamide"
+  ],
+  "Doxylamine": [
+    "Mequitazine",
+    "Methdilazine",
+    "Astemizole",
+    "Bilastine",
+    "Loratadine",
+    "Bromodiphenhydramine",
+    "Phenindamine",
+    "Azatadine",
+    "Alimemazine",
+    "Brompheniramine",
+    "Diphenylpyraline",
+    "Chlorphenamine",
+    "Carbinoxamine"
+  ],
+  "Mesalazine": [
+    "Balsalazide"
+  ],
+  "Caspofungin": [
+    "Anidulafungin",
+    "Micafungin"
+  ],
+  "Pentobarbital": [
+    "Talbutal"
+  ],
+  "Melatonin": [
+    "Tasimelteon"
+  ],
+  "Ziprasidone": [
+    "Risperidone",
+    "Aripiprazole",
+    "Clozapine",
+    "Iloperidone",
+    "Olanzapine",
+    "Mesoridazine",
+    "Quetiapine",
+    "Loxapine",
+    "Lurasidone"
+  ],
+  "Alogliptin": [
+    "Saxagliptin"
+  ],
+  "Sevoflurane": [
+    "Isoflurane"
+  ],
+  "Naloxegol": [
+    "Alvimopan"
+  ],
+  "Suprofen": [
+    "Lumiracoxib"
+  ],
+  "Idarubicin": [
+    "Valrubicin",
+    "Mitoxantrone"
+  ],
+  "Irbesartan": [
+    "Olmesartan",
+    "Losartan"
+  ],
+  "Nevirapine": [
+    "Rilpivirine",
+    "Tenofovir alafenamide",
+    "Stavudine",
+    "Emtricitabine",
+    "Didanosine",
+    "Zalcitabine",
+    "Abacavir",
+    "Zidovudine",
+    "Delavirdine",
+    "Tenofovir disoproxil"
+  ],
+  "Propranolol": [
+    "Nebivolol"
+  ],
+  "Methylnaltrexone": [
+    "Naloxegol",
+    "Alvimopan"
+  ],
+  "Ketobemidone": [
+    "Oxycodone"
+  ],
+  "Orciprenaline": [
+    "Pirbuterol",
+    "Clenbuterol",
+    "Salbutamol"
+  ],
+  "Clopidogrel": [
+    "Prasugrel",
+    "Ticlopidine"
+  ],
+  "Chloroprocaine": [
+    "Ropivacaine",
+    "Bupivacaine",
+    "Levobupivacaine",
+    "Mepivacaine"
+  ],
+  "Glutethimide": [
+    "Methyprylon"
+  ],
+  "Lisdexamfetamine": [
+    "Modafinil",
+    "Methylphenidate",
+    "Fencamfamine"
+  ],
+  "Salbutamol": [
+    "Clenbuterol",
+    "Terbutaline",
+    "Orciprenaline"
+  ],
+  "Norepinephrine": [
+    "Droxidopa"
+  ],
+  "Fosamprenavir": [
+    "Ritonavir",
+    "Amprenavir",
+    "Tipranavir",
+    "Lopinavir"
+  ],
+  "Acetaminophen": [
+    "Salsalate"
+  ],
+  "Amprenavir": [
+    "Fosamprenavir",
+    "Lopinavir",
+    "Indinavir",
+    "Ritonavir",
+    "Atazanavir",
+    "Tipranavir",
+    "Saquinavir"
+  ],
+  "Lansoprazole": [
+    "Pantoprazole"
+  ],
+  "Nitrazepam": [
+    "Midazolam",
+    "Flurazepam"
+  ],
+  "Benazepril": [
+    "Enalapril",
+    "Captopril"
+  ],
+  "Methimazole": [
+    "Carbimazole",
+    "Propylthiouracil"
+  ],
+  "Telithromycin": [
+    "Dirithromycin"
+  ],
+  "Sulfametopyrazine": [
+    "Sulfamoxole",
+    "Sulfadiazine"
+  ],
+  "Rilpivirine": [
+    "Tenofovir alafenamide",
+    "Delavirdine",
+    "Nevirapine",
+    "Tenofovir disoproxil",
+    "Didanosine",
+    "Zalcitabine"
+  ],
+  "Milrinone": [
+    "Enoximone"
+  ],
+  "Vinorelbine": [
+    "Vincristine"
+  ],
+  "Cisplatin": [
+    "Oxaliplatin",
+    "Carboplatin"
+  ],
+  "Voriconazole": [
+    "Posaconazole"
+  ],
+  "Pramipexole": [
+    "Rotigotine"
+  ],
+  "Bicalutamide": [
+    "Flutamide",
+    "Nilutamide"
+  ],
+  "Clotiazepam": [
+    "Fludiazepam",
+    "Adinazolam"
+  ],
+  "Melphalan": [
+    "Pipobroman",
+    "Cyclophosphamide",
+    "Busulfan",
+    "Thiotepa",
+    "Temozolomide",
+    "Dacarbazine",
+    "Lomustine"
+  ],
+  "Rotigotine": [
+    "Pramipexole"
+  ],
+  "Lovastatin": [
+    "Atorvastatin",
+    "Pravastatin"
+  ],
+  "Ticlopidine": [
+    "Clopidogrel",
+    "Prasugrel"
+  ],
+  "Anastrozole": [
+    "Exemestane"
+  ],
+  "Gemfibrozil": [
+    "Clofibrate",
+    "Fenofibric acid"
+  ],
+  "Chlorpropamide": [
+    "Repaglinide"
+  ],
+  "Procaterol": [
+    "Salbutamol",
+    "Pirbuterol",
+    "Clenbuterol"
+  ],
+  "Rizatriptan": [
+    "Eletriptan"
+  ],
+  "Dacarbazine": [
+    "Cyclophosphamide",
+    "Pipobroman"
+  ],
+  "Tipranavir": [
+    "Fosamprenavir",
+    "Indinavir",
+    "Amprenavir",
+    "Atazanavir",
+    "Saquinavir",
+    "Lopinavir"
+  ],
+  "Indinavir": [
+    "Fosamprenavir",
+    "Lopinavir",
+    "Ritonavir",
+    "Amprenavir",
+    "Tipranavir",
+    "Saquinavir"
+  ],
+  "Midazolam": [
+    "Flurazepam",
+    "Nitrazepam"
+  ],
+  "Formoterol": [
+    "Vilanterol",
+    "Salmeterol",
+    "Olodaterol",
+    "Indacaterol"
+  ],
+  "Captopril": [
+    "Benazepril"
+  ],
+  "Thiotepa": [
+    "Cyclophosphamide",
+    "Pipobroman"
+  ],
+  "Flutamide": [
+    "Bicalutamide"
+  ],
+  "Vildagliptin": [
+    "Saxagliptin"
+  ],
+  "Isosorbide Dinitrate": [
+    "Nitroglycerin"
+  ],
+  "Alvimopan": [
+    "Methylnaltrexone",
+    "Naloxegol"
+  ],
+  "Entacapone": [
+    "Tolcapone"
+  ],
+  "Boceprevir": [
+    "Paritaprevir"
+  ],
+  "Sitagliptin": [
+    "Saxagliptin"
+  ],
+  "Oxaprozin": [
+    "Lumiracoxib"
+  ],
+  "Pirbuterol": [
+    "Clenbuterol"
+  ],
+  "Dabigatran etexilate": [
+    "Argatroban"
+  ],
+  "Lornoxicam": [
+    "Lumiracoxib"
+  ],
+  "Sitaxentan": [
+    "Ambrisentan"
+  ],
+  "Methotrimeprazine": [
+    "Sulpiride",
+    "Molindone",
+    "Promazine",
+    "Prochlorperazine",
+    "Remoxipride",
+    "Fluspirilene",
+    "Haloperidol"
+  ],
+  "Luliconazole": [
+    "Efinaconazole",
+    "Bifonazole"
+  ],
+  "Stavudine": [
+    "Delavirdine",
+    "Rilpivirine",
+    "Efavirenz",
+    "Nevirapine",
+    "Tenofovir disoproxil",
+    "Tenofovir alafenamide",
+    "Zidovudine"
+  ],
+  "Carboplatin": [
+    "Cisplatin",
+    "Oxaliplatin"
+  ],
+  "Heroin": [
+    "Levomethadyl Acetate"
+  ],
+  "Nitroglycerin": [
+    "Isosorbide Dinitrate"
+  ],
+  "Zalcitabine": [
+    "Delavirdine",
+    "Rilpivirine",
+    "Efavirenz",
+    "Nevirapine",
+    "Tenofovir disoproxil",
+    "Tenofovir alafenamide",
+    "Didanosine",
+    "Zidovudine"
+  ],
+  "Alendronic acid": [
+    "Ibandronate"
+  ],
+  "Pitavastatin": [
+    "Fluvastatin"
+  ],
+  "Cangrelor": [
+    "Ticagrelor"
+  ],
+  "Degarelix": [
+    "Abarelix"
+  ],
+  "Vilanterol": [
+    "Formoterol",
+    "Olodaterol"
+  ],
+  "Warfarin": [
+    "Dicoumarol",
+    "Acenocoumarol",
+    "Phenprocoumon"
+  ],
+  "Tasimelteon": [
+    "Melatonin"
+  ],
+  "Droxidopa": [
+    "Norepinephrine"
+  ],
+  "Mitoxantrone": [
+    "Idarubicin",
+    "Valrubicin"
+  ],
+  "Quinapril": [
+    "Enalapril"
+  ],
+  "Nebivolol": [
+    "Propranolol"
+  ],
+  "Clenbuterol": [
+    "Salbutamol",
+    "Pirbuterol"
+  ],
+  "Tiaprofenic acid": [
+    "Lumiracoxib"
+  ],
+  "Valrubicin": [
+    "Mitoxantrone"
+  ],
+  "Fluvastatin": [
+    "Pitavastatin"
+  ],
+  "Indacaterol": [
+    "Formoterol",
+    "Olodaterol"
+  ],
+  "Cilazapril": [
+    "Benazepril"
+  ],
+  "Methyltestosterone": [
+    "Testosterone"
+  ],
+  "Dobutamine": [
+    "Arbutamine"
+  ],
+  "Desipramine": [
+    "Nortriptyline"
+  ],
+  "Bosentan": [
+    "Macitentan"
+  ],
+  "Foscarnet": [
+    "Cidofovir"
+  ],
+  "Plicamycin": [
+    "Mitomycin"
+  ],
+  "Fleroxacin": [
+    "Sparfloxacin"
+  ],
+  "Levomethadyl Acetate": [
+    "Heroin"
+  ],
+  "Terlipressin": [
+    "Desmopressin"
+  ],
+  "Oxaliplatin": [
+    "Cisplatin",
+    "Carboplatin"
+  ],
+  "Viloxazine": [
+    "Reboxetine"
+  ],
+  "Donepezil": [
+    "Galantamine"
+  ],
+  "Moxifloxacin": [
+    "Lomefloxacin"
+  ],
+  "Econazole": [
+    "Tioconazole"
+  ],
+  "Sparfloxacin": [
+    "Fleroxacin"
+  ],
+  "Tropisetron": [
+    "Palonosetron"
+  ],
+  "Roxithromycin": [
+    "Lincomycin"
+  ]
+}

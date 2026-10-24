@@ -1,0 +1,327 @@
+{
+  "pnas.1803294115.sd01.xlsx": {
+    "sheets": {
+      "Dataset S1": {
+        "total_rows": 89,
+        "columns": [
+          "Dataset S1. General sentence structures of 86 drug-drug interaction (DDI) types in DeepDDI.",
+          "Unnamed: 1"
+        ],
+        "sample_rows": [
+          {
+            "Dataset S1. General sentence structures of 86 drug-drug interaction (DDI) types in DeepDDI.": null,
+            "Unnamed: 1": null
+          },
+          {
+            "Dataset S1. General sentence structures of 86 drug-drug interaction (DDI) types in DeepDDI.": "DDI type",
+            "Unnamed: 1": "General sentence structure"
+          },
+          {
+            "Dataset S1. General sentence structures of 86 drug-drug interaction (DDI) types in DeepDDI.": "1",
+            "Unnamed: 1": "Drug a can cause a decrease in the absorption of Drug b resulting in a reduced serum concentration and potentially a decrease in efficacy."
+          }
+        ],
+        "null_counts_first_5k": {
+          "Dataset S1. General sentence structures of 86 drug-drug interaction (DDI) types in DeepDDI.": 1,
+          "Unnamed: 1": 1
+        },
+        "header_raw": [
+          "Dataset S1. General sentence structures of 86 drug-drug interaction (DDI) types in DeepDDI.",
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  "pnas.1803294115.sd02.xlsx": {
+    "sheets": {
+      "Dataset S2": {
+        "total_rows": 192287,
+        "columns": [
+          "Dataset S2. Gold standard DDI dataset from DrugBank.",
+          "Unnamed: 1"
+        ],
+        "sample_rows": [
+          {
+            "Dataset S2. Gold standard DDI dataset from DrugBank.": null,
+            "Unnamed: 1": null
+          },
+          {
+            "Dataset S2. Gold standard DDI dataset from DrugBank.": "Sentences describing the reported drug-drug interactions",
+            "Unnamed: 1": "Data type used to optimize the DNN architecture"
+          },
+          {
+            "Dataset S2. Gold standard DDI dataset from DrugBank.": "DB04571 may increase the photosensitizing activities of DB00460.",
+            "Unnamed: 1": "training"
+          }
+        ],
+        "null_counts_first_5k": {
+          "Dataset S2. Gold standard DDI dataset from DrugBank.": 1,
+          "Unnamed: 1": 1
+        },
+        "header_raw": [
+          "Dataset S2. Gold standard DDI dataset from DrugBank.",
+          ""
+        ]
+      }
+    }
+  },
+  "pnas.1803294115.sd03.xlsx": {
+    "sheets": {
+      "Dataset S3": {
+        "total_rows": 642,
+        "columns": [
+          "Dataset S3. Consistency of DDIs predicted using DeepDDI in comparison with the corresponding information in Drugs.com.",
+          "Unnamed: 1",
+          "Unnamed: 2",
+          "Unnamed: 3"
+        ],
+        "sample_rows": [
+          {
+            "Dataset S3. Consistency of DDIs predicted using DeepDDI in comparison with the corresponding information in Drugs.com.": null,
+            "Unnamed: 1": null,
+            "Unnamed: 2": null,
+            "Unnamed: 3": null
+          },
+          {
+            "Dataset S3. Consistency of DDIs predicted using DeepDDI in comparison with the corresponding information in Drugs.com.": "Names of drugs in pair",
+            "Unnamed: 1": "DDI type predicted using DeepDDI",
+            "Unnamed: 2": "DeepDDI output sentence for the corresponding DDI type",
+            "Unnamed: 3": "Consistent with information on the corresponding DDI in Drugs.com?"
+          },
+          {
+            "Dataset S3. Consistency of DDIs predicted using DeepDDI in comparison with the corresponding information in Drugs.com.": "Acetazolamide;Levomethadyl Acetate",
+            "Unnamed: 1": "9",
+            "Unnamed: 2": "The serum concentration of Levomethadyl Acetate can be decreased when it is combined with Acetazolamide.",
+            "Unnamed: 3": "No"
+          }
+        ],
+        "null_counts_first_5k": {
+          "Dataset S3. Consistency of DDIs predicted using DeepDDI in comparison with the corresponding information in Drugs.com.": 1,
+          "Unnamed: 1": 1,
+          "Unnamed: 2": 1,
+          "Unnamed: 3": 1
+        },
+        "header_raw": [
+          "Dataset S3. Consistency of DDIs predicted using DeepDDI in comparison with the corresponding information in Drugs.com.",
+          "",
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  "pnas.1803294115.sd04.xlsx": {
+    "sheets": {
+      "Dataset S4": {
+        "total_rows": 26005,
+        "columns": [
+          "Dataset S4. List of drug pairs reported to have negative health effects, and their potential alternative drug members that were predicted to lower the negative health effects.",
+          "Unnamed: 1",
+          "Unnamed: 2",
+          "Unnamed: 3"
+        ],
+        "sample_rows": [
+          {
+            "Dataset S4. List of drug pairs reported to have negative health effects, and their potential alternative drug members that were predicted to lower the negative health effects.": null,
+            "Unnamed: 1": null,
+            "Unnamed: 2": null,
+            "Unnamed: 3": null
+          },
+          {
+            "Dataset S4. List of drug pairs reported to have negative health effects, and their potential alternative drug members that were predicted to lower the negative health effects.": "Drug pairs reported to have negative health effects ",
+            "Unnamed: 1": "Original drug member",
+            "Unnamed: 2": "Alternative drug members predicted to lower the negative health effects ",
+            "Unnamed: 3": "Output neuron activity"
+          },
+          {
+            "Dataset S4. List of drug pairs reported to have negative health effects, and their potential alternative drug members that were predicted to lower the negative health effects.": "DB00531 may increase the cardiotoxic activities of DB09074.",
+            "Unnamed: 1": "Cyclophosphamide",
+            "Unnamed: 2": "Busulfan",
+            "Unnamed: 3": "< 0.001"
+          }
+        ],
+        "null_counts_first_5k": {
+          "Dataset S4. List of drug pairs reported to have negative health effects, and their potential alternative drug members that were predicted to lower the negative health effects.": 1,
+          "Unnamed: 1": 1,
+          "Unnamed: 2": 1,
+          "Unnamed: 3": 1
+        },
+        "header_raw": [
+          "Dataset S4. List of drug pairs reported to have negative health effects, and their potential alternative drug members that were predicted to lower the negative health effects.",
+          "",
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  "pnas.1803294115.sd05.xlsx": {
+    "sheets": {
+      "Dataset S5": {
+        "total_rows": 358999,
+        "columns": [
+          "Dataset S5. Food constituents predicted to affect pharmacological effects of approved drugs.",
+          "Unnamed: 1",
+          "Unnamed: 2",
+          "Unnamed: 3",
+          "Unnamed: 4",
+          "Unnamed: 5"
+        ],
+        "sample_rows": [
+          {
+            "Dataset S5. Food constituents predicted to affect pharmacological effects of approved drugs.": null,
+            "Unnamed: 1": null,
+            "Unnamed: 2": null,
+            "Unnamed: 3": null,
+            "Unnamed: 4": null,
+            "Unnamed: 5": null
+          },
+          {
+            "Dataset S5. Food constituents predicted to affect pharmacological effects of approved drugs.": "Food constituent",
+            "Unnamed: 1": "Interacting drug",
+            "Unnamed: 2": "DDI type predicted using DeepDDI",
+            "Unnamed: 3": "Approved drugs with similar structure in the same DDI type from the gold standard DDI dataset",
+            "Unnamed: 4": "DeepDDI output sentence",
+            "Unnamed: 5": "Output neuron activity"
+          },
+          {
+            "Dataset S5. Food constituents predicted to affect pharmacological effects of approved drugs.": "2-Phenylethylamine",
+            "Unnamed: 1": "Mianserin",
+            "Unnamed: 2": "45",
+            "Unnamed: 3": "Phenelzine;Amphetamine",
+            "Unnamed: 4": "2-Phenylethylamine may increase the anticholinergic activities of Mianserin.",
+            "Unnamed: 5": "0.984228"
+          }
+        ],
+        "null_counts_first_5k": {
+          "Dataset S5. Food constituents predicted to affect pharmacological effects of approved drugs.": 1,
+          "Unnamed: 1": 1,
+          "Unnamed: 2": 1,
+          "Unnamed: 3": 1,
+          "Unnamed: 4": 1,
+          "Unnamed: 5": 1
+        },
+        "header_raw": [
+          "Dataset S5. Food constituents predicted to affect pharmacological effects of approved drugs.",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  "pnas.1803294115.sd06.xlsx": {
+    "sheets": {
+      "Dataset S6": {
+        "total_rows": 4570,
+        "columns": [
+          "Dataset S6. Food constituents predicted to reduce in vivo concentration of interacting drugs.",
+          "Unnamed: 1",
+          "Unnamed: 2",
+          "Unnamed: 3",
+          "Unnamed: 4",
+          "Unnamed: 5",
+          "Unnamed: 6",
+          "Unnamed: 7"
+        ],
+        "sample_rows": [
+          {
+            "Dataset S6. Food constituents predicted to reduce in vivo concentration of interacting drugs.": null,
+            "Unnamed: 1": null,
+            "Unnamed: 2": null,
+            "Unnamed: 3": null,
+            "Unnamed: 4": null,
+            "Unnamed: 5": null,
+            "Unnamed: 6": null,
+            "Unnamed: 7": null
+          },
+          {
+            "Dataset S6. Food constituents predicted to reduce in vivo concentration of interacting drugs.": "DDI type predicted using DeepDDI",
+            "Unnamed: 1": "Disease name\n(KEGG DISEASE Database)",
+            "Unnamed: 2": "Food constituent",
+            "Unnamed: 3": "Food sources having the corresponding food constituent",
+            "Unnamed: 4": "Interacting drug",
+            "Unnamed: 5": "Approved drugs with similar structure in the same DDI type from the gold standard DDI dataset",
+            "Unnamed: 6": "DeepDDI output sentence",
+            "Unnamed: 7": "Output neuron activity"
+          },
+          {
+            "Dataset S6. Food constituents predicted to reduce in vivo concentration of interacting drugs.": "4",
+            "Unnamed: 1": "46 XX disorders of sex development (Disorders related to androgen excess)",
+            "Unnamed: 2": "Aluminum",
+            "Unnamed: 3": "Taro;Parsley;Parsnip;European plum;Common bean;Common pea;Star fruit;Cloves;Yautia;Dandelion;Garden tomato (var.);Sunburst squash (pattypan squash);Wild carrot;Green zucchini;Muskmelon;Broccoli;Common salsify;Burdock;Potato;Soy bean;Sweet potato;Common sage;Common persimmon;Coconut;Soft-necked garlic;Black walnut;Radish;Peanut;Red raspberry;Sweet orange;Endive;Fennel;Common grape;White cabbage;Pistachio;Japanese pumpkin;Lemon grass;Allspice;Bilberry;Almond;Ginger;Lettuce;Turnip;Butternut;Roselle;Spinach;Wild celery;Lima bean;Yam;Irish moss;Horseradish;Blackcurrant;Barley;Redcurrant;Red beetroot;Red bell pepper;Corn;Pear;Cashew nut;Yellow zucchini;Cloudberry;Cucumber;Gooseberry;Date;Garlic;Romaine lettuce;Pepper (C. annuum);Asparagus;Soursop;Garden onion;Eggplant;Common hazelnut;Yellow bell pepper;Tea;Peach;Roman camomile;Common thyme;Fenugreek;American cranberry;Green bell pepper;Orange bell pepper;Garden tomato;Italian sweet red pepper;Peppermint;Brazil nut;Dill;Safflower;Apple;Mandarin orange (Clementine  Tangerine);Garden rhubarb;Carrot;Cassava",
+            "Unnamed: 4": "Danazol",
+            "Unnamed: 5": "Aluminium",
+            "Unnamed: 6": "The bioavailability of Danazol can be decreased when combined with Aluminum.",
+            "Unnamed: 7": "0.975736"
+          }
+        ],
+        "null_counts_first_5k": {
+          "Dataset S6. Food constituents predicted to reduce in vivo concentration of interacting drugs.": 1,
+          "Unnamed: 1": 1,
+          "Unnamed: 2": 1,
+          "Unnamed: 3": 1,
+          "Unnamed: 4": 1,
+          "Unnamed: 5": 1,
+          "Unnamed: 6": 1,
+          "Unnamed: 7": 1
+        },
+        "header_raw": [
+          "Dataset S6. Food constituents predicted to reduce in vivo concentration of interacting drugs.",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  "pnas.1803294115.sd07.xlsx": {
+    "sheets": {
+      "Dataset S7": {
+        "total_rows": 339,
+        "columns": [
+          "Dataset S7. List of food constituents predicted to have bioactivity.",
+          "Unnamed: 1",
+          "Unnamed: 2"
+        ],
+        "sample_rows": [
+          {
+            "Dataset S7. List of food constituents predicted to have bioactivity.": null,
+            "Unnamed: 1": null,
+            "Unnamed: 2": null
+          },
+          {
+            "Dataset S7. List of food constituents predicted to have bioactivity.": "Bioactivity inferred from the DeepDDI output sentence",
+            "Unnamed: 1": "Food constituent",
+            "Unnamed: 2": "Approved drugs with similar structure in the same DDI type from the gold standard DDI dataset"
+          },
+          {
+            "Dataset S7. List of food constituents predicted to have bioactivity.": "Adverse neuromuscular activity",
+            "Unnamed: 1": "17alpha-ethynylestradiol",
+            "Unnamed: 2": "Estrone"
+          }
+        ],
+        "null_counts_first_5k": {
+          "Dataset S7. List of food constituents predicted to have bioactivity.": 1,
+          "Unnamed: 1": 1,
+          "Unnamed: 2": 1
+        },
+        "header_raw": [
+          "Dataset S7. List of food constituents predicted to have bioactivity.",
+          "",
+          ""
+        ]
+      }
+    }
+  }
+}
