@@ -82,24 +82,6 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
     setErrorMsg(null);
   };
 
-  const handleLoadSample = async () => {
-    try {
-      setIsSearching(true);
-      const warf = (await searchDrugs('Warfarin'))[0];
-      const asp = (await searchDrugs('Aspirin'))[0];
-      const lisin = (await searchDrugs('Lisinopril'))[0];
-
-      if (warf) onAddMedication(warf);
-      if (asp) onAddMedication(asp);
-      if (lisin) onAddMedication(lisin);
-      setErrorMsg(null);
-    } catch (err) {
-      console.error('Failed to load sample:', err);
-    } finally {
-      setIsSearching(false);
-    }
-  };
-
   const handleRunCheck = async () => {
     if (selectedMedications.length < 2) {
       setErrorMsg('Please select at least 2 medications to evaluate pairwise interactions.');
@@ -230,13 +212,6 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
             {/* Quick Helper Suggestion */}
             <div className="flex items-center justify-between text-on-surface-variant text-body-sm pt-1">
               <span>Popular examples to try: Warfarin, Metformin, Lisinopril, Omeprazole</span>
-              <button
-                type="button"
-                onClick={handleLoadSample}
-                className="text-primary hover:underline font-semibold cursor-pointer text-xs"
-              >
-                Try a Sample Combination
-              </button>
             </div>
           </div>
 
@@ -271,13 +246,6 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
                 <p className="font-body-sm text-body-sm text-on-surface-variant max-w-sm mt-1">
                   Search above and add 2 or more medicines to check if they are safe to take together.
                 </p>
-                <button
-                  type="button"
-                  onClick={handleLoadSample}
-                  className="mt-4 px-4 py-2 bg-surface-container text-primary rounded-lg font-label-md text-label-md hover:bg-primary-container hover:text-on-primary transition-colors cursor-pointer"
-                >
-                  Load 3 Sample Medicines
-                </button>
               </div>
             ) : (
               <div className="flex flex-col gap-2.5">
