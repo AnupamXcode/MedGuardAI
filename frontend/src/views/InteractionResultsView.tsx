@@ -5,9 +5,17 @@ const getRiskLevel = (pair: PairInteractionResult) => {
   if (pair.evidence_status === 'insufficient_evidence') {
     return {
       tier: 'No Known Clash',
-      badgeClass: 'bg-emerald-50 text-emerald-800 border-emerald-200',
-      dotClass: 'bg-emerald-500',
+      cardClass: 'bg-emerald-50/90 border-2 border-emerald-500 shadow-xs',
+      headerClass: 'bg-emerald-100/90 text-emerald-950 border-b border-emerald-300',
+      titleClass: 'text-emerald-950 font-bold',
+      badgeClass: 'bg-emerald-600 text-white font-bold shadow-xs',
+      dotClass: 'bg-white',
+      explanationClass: 'text-emerald-950 font-medium',
+      subtextClass: 'text-emerald-800/80 border-t border-emerald-200/80',
       explanation: 'No dangerous interaction was found in published research datasets. Routine monitoring advised.',
+      icon: 'check_circle',
+      iconColor: 'text-emerald-700',
+      parentBorder: 'border-l-4 border-l-emerald-500',
     };
   }
 
@@ -43,26 +51,50 @@ const getRiskLevel = (pair: PairInteractionResult) => {
   if (highRiskPatterns.some((pattern) => text.includes(pattern))) {
     return {
       tier: 'High Caution / Severe Risk',
-      badgeClass: 'bg-rose-50 text-rose-800 border-rose-200',
-      dotClass: 'bg-rose-500',
+      cardClass: 'bg-rose-50/95 border-2 border-rose-500 shadow-sm',
+      headerClass: 'bg-rose-100/95 text-rose-950 border-b border-rose-300',
+      titleClass: 'text-rose-950 font-bold',
+      badgeClass: 'bg-rose-600 text-white font-bold shadow-xs',
+      dotClass: 'bg-white animate-pulse',
+      explanationClass: 'text-rose-950 font-semibold',
+      subtextClass: 'text-rose-800/80 border-t border-rose-200/80',
       explanation: 'Both medicines may significantly amplify side effects (such as bleeding or heart strain). Talk to your doctor before combining.',
+      icon: 'error',
+      iconColor: 'text-rose-700',
+      parentBorder: 'border-l-4 border-l-rose-500',
     };
   }
 
   if (moderateRiskPatterns.some((pattern) => text.includes(pattern))) {
     return {
       tier: 'Moderate Warning',
-      badgeClass: 'bg-amber-50 text-amber-800 border-amber-200',
-      dotClass: 'bg-amber-500',
+      cardClass: 'bg-amber-50/95 border-2 border-amber-500 shadow-sm',
+      headerClass: 'bg-amber-100/95 text-amber-950 border-b border-amber-300',
+      titleClass: 'text-amber-950 font-bold',
+      badgeClass: 'bg-amber-500 text-slate-950 font-bold shadow-xs',
+      dotClass: 'bg-slate-950',
+      explanationClass: 'text-amber-950 font-semibold',
+      subtextClass: 'text-amber-800/80 border-t border-amber-200/80',
       explanation: 'May alter drug breakdown or increase blood levels. A dose adjustment or scheduled spacing may be needed.',
+      icon: 'warning',
+      iconColor: 'text-amber-700',
+      parentBorder: 'border-l-4 border-l-amber-500',
     };
   }
 
   return {
     tier: 'Mild / Monitor',
-    badgeClass: 'bg-sky-50 text-sky-800 border-sky-200',
-    dotClass: 'bg-sky-500',
+    cardClass: 'bg-sky-50/95 border-2 border-sky-500 shadow-sm',
+    headerClass: 'bg-sky-100/95 text-sky-950 border-b border-sky-300',
+    titleClass: 'text-sky-950 font-bold',
+    badgeClass: 'bg-sky-600 text-white font-bold shadow-xs',
+    dotClass: 'bg-white',
+    explanationClass: 'text-sky-950 font-medium',
+    subtextClass: 'text-sky-800/80 border-t border-sky-200/80',
     explanation: 'May cause minor changes in absorption or effectiveness. Discuss timing with your pharmacist.',
+    icon: 'info',
+    iconColor: 'text-sky-700',
+    parentBorder: 'border-l-4 border-l-sky-500',
   };
 };
 
@@ -274,7 +306,7 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
           return (
             <div
               key={`${pair.drug_a_id}-${pair.drug_b_id}`}
-              className="bg-surface-container-lowest rounded-2xl shadow-xs border border-surface-variant/40 overflow-hidden transition-all duration-200"
+              className={`bg-surface-container-lowest rounded-2xl shadow-xs border border-surface-variant/40 overflow-hidden transition-all duration-200 ${risk.parentBorder}`}
             >
               {/* Accordion Header */}
               <div
@@ -305,8 +337,8 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
                       </span>
 
                       {/* Risk Level Badge */}
-                      <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold border ${risk.badgeClass}`}>
-                        <span className={`w-1.5 h-1.5 rounded-full ${risk.dotClass}`}></span>
+                      <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold shadow-xs ${risk.badgeClass}`}>
+                        <span className={`w-2 h-2 rounded-full ${risk.dotClass}`}></span>
                         <span>{risk.tier}</span>
                       </span>
 
@@ -372,22 +404,33 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
                       </span>
                     </div>
 
-                    <div className="p-3.5 rounded-xl bg-surface-container-lowest border border-surface-variant/30 flex flex-col justify-between">
-                      <div className="flex items-center justify-between mb-1.5">
-                        <span className="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">
-                          Risk Level
-                        </span>
-                        <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold border ${risk.badgeClass}`}>
-                          <span className={`w-1.5 h-1.5 rounded-full ${risk.dotClass}`}></span>
+                    {/* Prominently Highlighted Risk Level Card */}
+                    <div className={`rounded-xl border overflow-hidden flex flex-col justify-between transition-all ${risk.cardClass}`}>
+                      {/* High-visibility colored header bar */}
+                      <div className={`px-4 py-2.5 flex items-center justify-between ${risk.headerClass}`}>
+                        <div className="flex items-center gap-2">
+                          <span className={`material-symbols-outlined text-[20px] ${risk.iconColor}`}>
+                            {risk.icon}
+                          </span>
+                          <span className={`text-xs uppercase tracking-wider font-extrabold ${risk.titleClass}`}>
+                            Risk Level
+                          </span>
+                        </div>
+                        <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold shadow-xs ${risk.badgeClass}`}>
+                          <span className={`w-2 h-2 rounded-full ${risk.dotClass}`}></span>
                           <span>{risk.tier}</span>
                         </span>
                       </div>
-                      <p className="font-body-sm text-body-sm text-on-surface font-medium leading-relaxed">
-                        {risk.explanation}
-                      </p>
-                      <span className="text-xs text-outline mt-2 pt-2 border-t border-surface-variant/20">
-                        Exact clinical risk depends on your personal prescribed dosage. Share this with your doctor.
-                      </span>
+
+                      {/* Content Body with evident colored text */}
+                      <div className="p-4 flex flex-col justify-between h-full space-y-2">
+                        <p className={`font-body-md text-body-md leading-relaxed ${risk.explanationClass}`}>
+                          {risk.explanation}
+                        </p>
+                        <span className={`text-xs pt-2.5 font-medium ${risk.subtextClass}`}>
+                          Exact clinical risk depends on your personal prescribed dosage. Share this with your doctor.
+                        </span>
+                      </div>
                     </div>
                   </div>
 
