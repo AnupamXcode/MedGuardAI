@@ -1,0 +1,9 @@
+{
+  "venvPath": "C:\\Users\\Anupam Shrivastava\\AppData\\Local\\Programs\\Python",
+  "pythonVersion": "3.11",
+  "pythonPlatform": "Windows",
+  "extraPaths": [
+    "C:\\Users\\Anupam Shrivastava\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages",
+    "C:\\Users\\Anupam Shrivastava\\AppData\\Roaming\\Python\\Python311\\site-packages"
+  ]
+}
