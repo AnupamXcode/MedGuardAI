@@ -124,17 +124,11 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
       {/* Top Section: Header & Operational Context */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
         <div className="flex flex-col max-w-2xl">
-          <div className="flex items-center gap-space-xs text-primary mb-2">
-            <span className="material-symbols-outlined text-[18px]">verified_user</span>
-            <span className="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">
-              Precision Pharmacovigilance Engine
-            </span>
-          </div>
           <h1 className="font-headline-lg text-headline-lg text-on-surface tracking-tight">
-            Check Drug Interactions &amp; Safety
+            Check If Your Medicines Are Safe Together
           </h1>
           <p className="font-body-md text-body-md text-on-surface-variant mt-1.5 leading-relaxed">
-            Screen multi-drug combinations against known contraindications, adverse metabolic competition, and pre-existing patient health conditions.
+            Check if taking your medicines at the same time is safe, or if they clash with your current health conditions.
           </p>
         </div>
 
@@ -142,11 +136,11 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
         <div className="flex items-center gap-space-sm bg-surface-container-lowest px-4 py-2.5 rounded-xl shadow-xs self-start md:self-auto border border-surface-variant/30">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
-            <span className="font-label-md text-label-md text-on-surface font-semibold">Live Protocol Session</span>
+            <span className="font-label-md text-label-md text-on-surface font-semibold">Ready to Check</span>
           </div>
           <span className="w-1 h-1 rounded-full bg-outline-variant"></span>
           <span className="font-body-sm text-body-sm text-on-surface-variant">
-            Active Buffer: <strong className="text-on-surface font-semibold">{selectedMedications.length} Rx + {selectedConditions.length} Conditions</strong>
+            Selected: <strong className="text-on-surface font-semibold">{selectedMedications.length} Medicines + {selectedConditions.length} Conditions</strong>
           </span>
         </div>
       </div>
@@ -163,11 +157,11 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
                   <span className="material-symbols-outlined text-[18px]">search_insights</span>
                 </span>
                 <h2 className="font-title-md text-title-md text-on-surface font-semibold">
-                  Search &amp; Add Medications
+                  Search &amp; Add Medicines
                 </h2>
               </div>
               <span className="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded font-mono">
-                1,710 Synced Therapeutics
+                1,710 Approved Medicines
               </span>
             </div>
 
@@ -182,7 +176,7 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   onFocus={() => { if (candidates.length > 0) setIsDropdownOpen(true); }}
-                  placeholder="Search medicine by generic name, brand, or active substance (e.g. Warfarin, Aspirin, Metformin)..."
+                  placeholder="Type a medicine name (for example: Aspirin, Metformin, or Ibuprofen)..."
                   className="w-full h-12 pl-12 pr-24 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline border border-surface-variant focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-xs transition-all"
                 />
                 {isSearching && (
@@ -197,10 +191,10 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
                 <div className="absolute left-0 right-0 top-14 bg-surface-container-lowest rounded-xl shadow-xl z-30 p-2 border border-surface-variant/40 max-h-80 overflow-y-auto">
                   <div className="px-3 py-1.5 flex items-center justify-between border-b border-surface-container-high pb-2 mb-1">
                     <span className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">
-                      Recommended Database Matches
+                      Matching Medicines
                     </span>
                     <span className="font-label-sm text-label-sm text-primary font-semibold">
-                      {candidates.length} Available Candidates
+                      {candidates.length} Found
                     </span>
                   </div>
                   <div className="flex flex-col gap-1">
@@ -219,7 +213,7 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
                               {drug.name}
                             </span>
                             <span className="font-body-sm text-body-sm text-on-surface-variant truncate">
-                              ID: {drug.id} • {drug.categories[0] || drug.type}
+                              {drug.categories[0] || drug.type || 'Approved Medicine'}
                             </span>
                           </div>
                         </div>
@@ -235,13 +229,13 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
 
             {/* Quick Helper Suggestion */}
             <div className="flex items-center justify-between text-on-surface-variant text-body-sm pt-1">
-              <span>Popular clinical tests: Warfarin, Aspirin, Lisinopril, Metformin</span>
+              <span>Popular examples to try: Warfarin, Aspirin, Lisinopril, Metformin</span>
               <button
                 type="button"
                 onClick={handleLoadSample}
                 className="text-primary hover:underline font-semibold cursor-pointer text-xs"
               >
-                Load Sample Regimen
+                Try a Sample Combination
               </button>
             </div>
           </div>
@@ -254,7 +248,7 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
                   <span className="material-symbols-outlined text-[18px]">medication</span>
                 </span>
                 <h2 className="font-title-md text-title-md text-on-surface font-semibold">
-                  Active Medication Buffer ({selectedMedications.length})
+                  Your Medicine List ({selectedMedications.length})
                 </h2>
               </div>
               {selectedMedications.length > 0 && (
@@ -273,16 +267,16 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
                 <span className="material-symbols-outlined text-outline text-[40px] mb-2">
                   playlist_add
                 </span>
-                <p className="font-title-md text-title-md text-on-surface">No Medications Selected</p>
+                <p className="font-title-md text-title-md text-on-surface">No Medicines Added Yet</p>
                 <p className="font-body-sm text-body-sm text-on-surface-variant max-w-sm mt-1">
-                  Search above and add 2 or more medications to begin multi-drug interaction screening.
+                  Search above and add 2 or more medicines to check if they are safe to take together.
                 </p>
                 <button
                   type="button"
                   onClick={handleLoadSample}
                   className="mt-4 px-4 py-2 bg-surface-container text-primary rounded-lg font-label-md text-label-md hover:bg-primary-container hover:text-on-primary transition-colors cursor-pointer"
                 >
-                  Load 3 Sample Therapeutics
+                  Load 3 Sample Medicines
                 </button>
               </div>
             ) : (
@@ -306,7 +300,7 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
                           </span>
                           <span className="text-outline-variant">•</span>
                           <span className="text-[12px] text-on-surface-variant truncate">
-                            {med.categories[0] || 'Approved Therapeutic'}
+                            {med.categories[0] || 'Approved Medicine'}
                           </span>
                         </div>
                       </div>
@@ -315,7 +309,7 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
                       type="button"
                       onClick={() => onRemoveMedication(med.id)}
                       className="p-1.5 rounded-lg text-outline hover:text-error hover:bg-error-container/20 transition-colors cursor-pointer"
-                      title="Remove medication"
+                      title="Remove medicine"
                     >
                       <span className="material-symbols-outlined text-[20px]">delete</span>
                     </button>
@@ -336,16 +330,16 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
                   <span className="material-symbols-outlined text-[18px]">cardiology</span>
                 </span>
                 <h2 className="font-title-md text-title-md text-on-surface font-semibold">
-                  Baseline Pathologies
+                  Your Health Conditions
                 </h2>
               </div>
               <span className="font-label-sm text-label-sm text-secondary font-bold bg-secondary-container/30 px-2 py-0.5 rounded">
-                SD06 Synced
+                Safety Verified
               </span>
             </div>
 
             <p className="font-body-sm text-body-sm text-on-surface-variant mb-4 leading-relaxed">
-              Select concurrent patient chronic indications to screen for disease-drug metabolism interactions.
+              Select any health conditions you have so we can warn you if a medicine might not be safe for you.
             </p>
 
             <div className="flex flex-col gap-2">
@@ -375,7 +369,7 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
             <div className="mt-4 p-2.5 rounded-lg bg-surface-container-low text-body-sm text-outline flex items-start gap-2">
               <span className="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">info</span>
               <span>
-                Health condition alerts are informational and cross-referenced against research dataset SD06 (KEGG Disease database).
+                Health condition alerts help you and your doctor spot medicines that may need extra care with your health history.
               </span>
             </div>
           </div>
@@ -402,19 +396,19 @@ export const InteractionCheckerView: React.FC<InteractionCheckerViewProps> = ({
               {isLoading ? (
                 <>
                   <span className="material-symbols-outlined animate-spin text-[20px]">progress_activity</span>
-                  <span>Executing Dual-Path Pharmacovigilance Scan...</span>
+                  <span>Checking Medicine Safety &amp; Risks...</span>
                 </>
               ) : (
                 <>
                   <span className="material-symbols-outlined text-[20px]">analytics</span>
-                  <span>Analyze {selectedMedications.length} Medications ({Math.max(0, (selectedMedications.length * (selectedMedications.length - 1)) / 2)} Pairs)</span>
+                  <span>Check These {selectedMedications.length} Medicines Together</span>
                 </>
               )}
             </button>
 
             <div className="text-center">
               <span className="font-body-sm text-body-sm text-outline">
-                Dual-Path Engine: DrugBank Gold-Standard + DeepDDI Neural Fallback
+                Checked against verified medical research and smart AI safety models
               </span>
             </div>
           </div>

@@ -329,17 +329,17 @@ export const OnboardingWizard: React.FC = () => {
           </div>
           <h2 className="text-xl font-bold font-title-lg">
             {step === 1 && 'Step 1: Basic Information'}
-            {step === 2 && 'Step 2: Clinical Conditions & Allergies'}
-            {step === 3 && 'Step 3: Current Medications'}
+            {step === 2 && 'Step 2: Health Conditions & Allergies'}
+            {step === 3 && 'Step 3: Current Medicines'}
             {step === 4 && 'Step 4: Emergency Contacts'}
             {step === 5 && 'Step 5: Review & Confirm Profile'}
           </h2>
           <p className="text-xs text-slate-200 mt-0.5">
-            {step === 1 && 'Provide basic demographic details for dosage precision and clearance screening.'}
-            {step === 2 && 'Select chronic conditions and allergies to screen drug-disease contraindications.'}
-            {step === 3 && 'Add active prescription medications to monitor cross-reactivity.'}
-            {step === 4 && 'Designate emergency contacts in case of adverse drug reactions.'}
-            {step === 5 && 'Verify your inputs before committing your encrypted profile.'}
+            {step === 1 && 'Enter your basic details so we can check your medicines accurately.'}
+            {step === 2 && 'Select any health conditions and allergies to screen for safety warnings.'}
+            {step === 3 && 'Add medicines you take every day to check if they clash.'}
+            {step === 4 && 'Add emergency contacts for quick reference.'}
+            {step === 5 && 'Check your details before saving your profile.'}
           </p>
 
           {/* Stepper Progress Bar */}
@@ -382,7 +382,7 @@ export const OnboardingWizard: React.FC = () => {
               <CheckCircle2 className="w-6 h-6 text-teal-600 shrink-0" />
               <div>
                 <div className="font-bold">Health Profile Successfully Saved!</div>
-                <div className="text-xs text-teal-700">Navigating to your personalized clinical dashboard...</div>
+                <div className="text-xs text-teal-700">Taking you to your personal health dashboard...</div>
               </div>
             </div>
           )}
@@ -393,7 +393,7 @@ export const OnboardingWizard: React.FC = () => {
               <div className="p-3 bg-teal-50/70 rounded-xl border border-teal-100 text-xs text-teal-900 flex items-start space-x-2">
                 <User className="w-4 h-4 text-teal-600 shrink-0 mt-0.5" />
                 <span>
-                  <strong>Essential Setup:</strong> Steps 1 &amp; 2 capture your basic health context. Steps 3 &amp; 4 are optional and can be added later from your profile.
+                  <strong>Quick Setup:</strong> Steps 1 &amp; 2 cover the basics. Steps 3 &amp; 4 are optional and can be added anytime later.
                 </span>
               </div>
 
@@ -407,7 +407,7 @@ export const OnboardingWizard: React.FC = () => {
                     required
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    placeholder="e.g. Dr. Eleanor Vance"
+                    placeholder="e.g. Sarah Johnson"
                     className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-500 text-slate-900"
                   />
                 </div>
@@ -511,10 +511,10 @@ export const OnboardingWizard: React.FC = () => {
 
               <div>
                 <label className="block text-xs font-bold text-slate-900 mb-1">
-                  Chronic or Existing Medical Conditions
+                  Health Conditions or Illnesses
                 </label>
                 <p className="text-[11px] text-slate-500 mb-2">
-                  Select conditions to screen against drug-disease contraindications (e.g. Dengue + NSAIDs, Asthma + Beta-blockers).
+                  Pick any conditions you have so we can warn you if a medicine isn't safe for you (for example, high blood pressure, diabetes, or asthma).
                 </p>
 
                 {/* Search & Custom condition */}
@@ -526,7 +526,7 @@ export const OnboardingWizard: React.FC = () => {
                       value={conditionSearch}
                       onChange={(e) => setConditionSearch(e.target.value)}
                       onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), addCustomCondition())}
-                      placeholder="Search conditions or type custom (e.g. Dengue, High BP)..."
+                      placeholder="Search conditions or type your own (e.g. Asthma, High BP)..."
                       className="w-full pl-9 pr-3 py-2 text-xs rounded-lg border border-slate-300 bg-slate-50 text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-500"
                     />
                   </div>
@@ -586,7 +586,7 @@ export const OnboardingWizard: React.FC = () => {
               {/* Allergies and Sensitivities */}
               <div className="pt-2 border-t border-slate-200">
                 <label className="block text-xs font-bold text-slate-900 mb-1">
-                  Known Allergies &amp; Medication Sensitivities
+                  Known Allergies &amp; Sensitivities
                 </label>
                 <div className="flex flex-wrap gap-2 mb-3">
                   {COMMON_ALLERGIES.map((allergy) => {
@@ -614,7 +614,7 @@ export const OnboardingWizard: React.FC = () => {
                     value={allergyInput}
                     onChange={(e) => setAllergyInput(e.target.value)}
                     onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), addCustomAllergy())}
-                    placeholder="Other allergy (e.g. Codeine, Peanuts)..."
+                    placeholder="Other allergy (e.g. Penicillin, Peanuts)..."
                     className="flex-1 px-3 py-2 text-xs rounded-lg border border-slate-300 bg-slate-50 text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
                   />
                   {allergyInput.trim() && (
@@ -632,13 +632,13 @@ export const OnboardingWizard: React.FC = () => {
               {/* Additional Health Notes */}
               <div className="pt-2 border-t border-slate-200">
                 <label className="block text-xs font-bold text-slate-900 mb-1">
-                  Additional Clinical Notes <span className="text-slate-500 font-normal">(Optional)</span>
+                  Additional Health Notes <span className="text-slate-500 font-normal">(Optional)</span>
                 </label>
                 <textarea
                   rows={2}
                   value={healthNotes}
                   onChange={(e) => setHealthNotes(e.target.value)}
-                  placeholder="e.g. Family history of QT prolongation, recent gastrointestinal bleeding..."
+                  placeholder="e.g. Sensitive stomach, prone to dizziness, or any note from your doctor..."
                   className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-slate-50 text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
                 />
               </div>
@@ -650,10 +650,10 @@ export const OnboardingWizard: React.FC = () => {
             <div className="space-y-4">
               <div>
                 <label className="block text-xs font-bold text-slate-900 mb-1">
-                  Add Active Medications
+                  Add Your Daily Medicines
                 </label>
                 <p className="text-[11px] text-slate-500 mb-3">
-                  Search from our 1,710 clinically validated DrugBank database entries to monitor cross-reactivity.
+                  Search from over 1,700 verified medicines to check if they are safe to take together.
                 </p>
 
                 {/* Medication Search Input */}
@@ -663,7 +663,7 @@ export const OnboardingWizard: React.FC = () => {
                     type="text"
                     value={medQuery}
                     onChange={(e) => setMedQuery(e.target.value)}
-                    placeholder="Type drug name (e.g. Warfarin, Aspirin, Metformin, Clopidogrel)..."
+                    placeholder="Type medicine name (e.g. Aspirin, Metformin, Lisinopril)..."
                     className="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-slate-300 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-500 text-slate-900"
                   />
                   {isSearchingMeds && (
@@ -709,7 +709,7 @@ export const OnboardingWizard: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-semibold text-slate-900 mb-0.5">Dosage</label>
+                      <label className="block text-[11px] font-semibold text-slate-900 mb-0.5">Dose</label>
                       <input
                         type="text"
                         value={newDosage}
@@ -719,18 +719,18 @@ export const OnboardingWizard: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-semibold text-slate-900 mb-0.5">Frequency</label>
+                      <label className="block text-[11px] font-semibold text-slate-900 mb-0.5">How Often</label>
                       <select
                         value={newFrequency}
                         onChange={(e) => setNewFrequency(e.target.value)}
                         className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 bg-white text-slate-900"
                       >
-                        <option value="Once daily">Once daily</option>
-                        <option value="Twice daily (BID)">Twice daily (BID)</option>
-                        <option value="Three times daily (TID)">Three times daily (TID)</option>
+                        <option value="Once daily">Once a day</option>
+                        <option value="Twice daily (BID)">Twice a day</option>
+                        <option value="Three times daily (TID)">Three times a day</option>
                         <option value="Every 8 hours">Every 8 hours</option>
-                        <option value="As needed (PRN)">As needed (PRN)</option>
-                        <option value="Weekly">Weekly</option>
+                        <option value="As needed (PRN)">As needed</option>
+                        <option value="Weekly">Once a week</option>
                       </select>
                     </div>
                   </div>
@@ -752,7 +752,7 @@ export const OnboardingWizard: React.FC = () => {
                       className="px-4 py-1.5 rounded-lg bg-teal-600 text-white text-xs font-semibold hover:bg-teal-700 transition disabled:opacity-40 flex items-center space-x-1.5 shadow-sm"
                     >
                       <Plus className="w-3.5 h-3.5" />
-                      <span>Add to Regimen</span>
+                      <span>Add Medicine</span>
                     </button>
                   </div>
                 </div>
@@ -761,11 +761,11 @@ export const OnboardingWizard: React.FC = () => {
               {/* Current Active List */}
               <div>
                 <label className="block text-xs font-bold text-slate-900 mb-2">
-                  Regimen List ({medications.length} {medications.length === 1 ? 'medication' : 'medications'})
+                  My Medicine List ({medications.length} {medications.length === 1 ? 'medicine' : 'medicines'})
                 </label>
                 {medications.length === 0 ? (
                   <div className="p-6 rounded-xl border border-dashed border-slate-200 bg-slate-50 text-center text-xs text-slate-500">
-                    No medications added yet. Add current prescriptions above or skip to dashboard.
+                    No medicines added yet. Add any pills or medicines above, or jump straight to your dashboard.
                   </div>
                 ) : (
                   <div className="space-y-2">
@@ -797,7 +797,7 @@ export const OnboardingWizard: React.FC = () => {
                           type="button"
                           onClick={() => handleRemoveMedication(idx)}
                           className="p-1.5 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition"
-                          title="Remove medication"
+                          title="Remove medicine"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>
@@ -817,7 +817,7 @@ export const OnboardingWizard: React.FC = () => {
                   Emergency Contacts (Optional)
                 </label>
                 <p className="text-[11px] text-slate-500 mb-3">
-                  Designate contacts for notification during adverse reaction events.
+                  Add contacts so family members or your doctor can be easily reached if needed.
                 </p>
 
                 <div className="space-y-3">
@@ -863,12 +863,12 @@ export const OnboardingWizard: React.FC = () => {
                             onChange={(e) => updateContact(idx, 'relationship', e.target.value)}
                             className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-300 bg-white text-slate-900"
                           >
-                            <option value="Spouse">Spouse</option>
+                            <option value="Spouse">Spouse / Partner</option>
                             <option value="Parent">Parent</option>
-                            <option value="Child">Child</option>
-                            <option value="Sibling">Sibling</option>
+                            <option value="Child">Son / Daughter</option>
+                            <option value="Sibling">Brother / Sister</option>
                             <option value="Caregiver">Caregiver</option>
-                            <option value="Physician">Primary Physician</option>
+                            <option value="Physician">Doctor / Clinic</option>
                             <option value="Friend">Friend</option>
                           </select>
                         </div>
@@ -894,7 +894,7 @@ export const OnboardingWizard: React.FC = () => {
                     className="mt-3 px-3 py-1.5 border border-dashed border-teal-600 text-teal-700 hover:bg-teal-50 rounded-lg text-xs font-semibold transition flex items-center space-x-1.5"
                   >
                     <Plus className="w-3.5 h-3.5" />
-                    <span>Add Secondary Emergency Contact</span>
+                    <span>Add Another Emergency Contact</span>
                   </button>
                 )}
               </div>
@@ -905,7 +905,7 @@ export const OnboardingWizard: React.FC = () => {
           {step === 5 && (
             <div className="space-y-4">
               <div className="p-4 bg-teal-50 rounded-xl border border-teal-200 text-xs text-teal-900">
-                <strong>Profile Review:</strong> Please review your clinical summary below before saving. You can edit any details later from your profile menu.
+                <strong>Profile Summary:</strong> Please check your details below before saving. You can change any of this anytime from your health profile.
               </div>
 
               {/* Review Section 1: Basic Info */}
@@ -950,7 +950,7 @@ export const OnboardingWizard: React.FC = () => {
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center space-x-2 text-xs font-bold text-slate-900">
                     <Activity className="w-4 h-4 text-teal-600" />
-                    <span>Conditions &amp; Hypersensitivities</span>
+                    <span>Health Conditions &amp; Allergies</span>
                   </div>
                   <button
                     type="button"
@@ -964,7 +964,7 @@ export const OnboardingWizard: React.FC = () => {
                   <div>
                     <span className="text-slate-500 text-[10px] block">Selected Conditions:</span>
                     {selectedConditions.length === 0 ? (
-                      <span className="text-slate-400 italic">None recorded</span>
+                      <span className="text-slate-400 italic">None added</span>
                     ) : (
                       <div className="flex flex-wrap gap-1 mt-1">
                         {selectedConditions.map((c) => (
@@ -1003,7 +1003,7 @@ export const OnboardingWizard: React.FC = () => {
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center space-x-2 text-xs font-bold text-slate-900">
                     <Pill className="w-4 h-4 text-teal-600" />
-                    <span>Active Medications ({medications.length})</span>
+                    <span>Saved Medicines ({medications.length})</span>
                   </div>
                   <button
                     type="button"
@@ -1014,7 +1014,7 @@ export const OnboardingWizard: React.FC = () => {
                   </button>
                 </div>
                 {medications.length === 0 ? (
-                  <span className="text-xs text-slate-400 italic">No active medications registered.</span>
+                  <span className="text-xs text-slate-400 italic">No medicines added yet.</span>
                 ) : (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {medications.map((m, idx) => (

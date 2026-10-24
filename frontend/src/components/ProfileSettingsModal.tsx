@@ -194,22 +194,22 @@ export const ProfileSettingsModal: React.FC = () => {
       setNewMedId('');
       setNewDosage('');
       await refreshProfile();
-      setStatusMsg({ type: 'success', text: 'Medication added to your active regimen.' });
+      setStatusMsg({ type: 'success', text: 'Medicine added to your saved list.' });
     } catch (err: any) {
-      setStatusMsg({ type: 'error', text: err.message || 'Failed to add medication.' });
+      setStatusMsg({ type: 'error', text: err.message || 'Failed to add medicine.' });
     } finally {
       setSaving(false);
     }
   };
 
   const handleDeleteMedication = async (id: number) => {
-    if (!window.confirm('Are you sure you want to remove this medication from your regimen?')) return;
+    if (!window.confirm('Are you sure you want to remove this medicine from your list?')) return;
     try {
       await deleteUserMedication(id);
       await refreshProfile();
-      setStatusMsg({ type: 'success', text: 'Medication removed.' });
+      setStatusMsg({ type: 'success', text: 'Medicine removed.' });
     } catch (err: any) {
-      setStatusMsg({ type: 'error', text: err.message || 'Failed to remove medication.' });
+      setStatusMsg({ type: 'error', text: err.message || 'Failed to remove medicine.' });
     }
   };
 
@@ -329,7 +329,7 @@ export const ProfileSettingsModal: React.FC = () => {
                 }`}
               >
                 <Activity className="w-4 h-4" />
-                <span>Health Information</span>
+                <span>Health &amp; Illnesses</span>
               </button>
 
               <button
@@ -342,7 +342,7 @@ export const ProfileSettingsModal: React.FC = () => {
                 }`}
               >
                 <Pill className="w-4 h-4" />
-                <span>My Medications ({profile?.medications?.length || 0})</span>
+                <span>My Saved Medicines ({profile?.medications?.length || 0})</span>
               </button>
 
               <button
@@ -355,7 +355,7 @@ export const ProfileSettingsModal: React.FC = () => {
                 }`}
               >
                 <HeartPulse className="w-4 h-4" />
-                <span>Emergency Contact</span>
+                <span>Emergency Contacts</span>
               </button>
 
               <button
@@ -394,14 +394,14 @@ export const ProfileSettingsModal: React.FC = () => {
             <div className="flex items-center justify-between pb-4 border-b border-outline-variant/60 mb-5">
               <div>
                 <h3 className="text-lg font-bold text-charcoal font-title-lg">
-                  {activeTab === 'profile' && 'Personal Profile & Demographics'}
-                  {activeTab === 'health' && 'Clinical Conditions & Hypersensitivities'}
-                  {activeTab === 'medications' && 'Active Medication Regimen'}
+                  {activeTab === 'profile' && 'Personal Details & Profile'}
+                  {activeTab === 'health' && 'Health Conditions & Allergies'}
+                  {activeTab === 'medications' && 'My Saved Medicines'}
                   {activeTab === 'emergency' && 'Emergency Contacts'}
-                  {activeTab === 'account' && 'Account Credentials & Security'}
+                  {activeTab === 'account' && 'Account Password & Security'}
                 </h3>
                 <p className="text-xs text-charcoal-muted">
-                  Self-managed data strictly isolated under your authorized account.
+                  Your health information is private and securely saved to your personal account.
                 </p>
               </div>
               <button
@@ -435,7 +435,7 @@ export const ProfileSettingsModal: React.FC = () => {
               <form onSubmit={handleSaveProfile} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-charcoal mb-1">Full Legal Name</label>
+                    <label className="block text-xs font-semibold text-charcoal mb-1">Full Name</label>
                     <input
                       type="text"
                       required
@@ -445,7 +445,7 @@ export const ProfileSettingsModal: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-charcoal mb-1">Email (Read-Only)</label>
+                    <label className="block text-xs font-semibold text-charcoal mb-1">Email Address</label>
                     <input
                       type="email"
                       disabled
@@ -500,24 +500,24 @@ export const ProfileSettingsModal: React.FC = () => {
 
                 <div className="pt-2">
                   <label className="block text-xs font-semibold text-charcoal mb-1">
-                    Known Allergies (comma-separated)
+                    Known Allergies (separated by commas)
                   </label>
                   <input
                     type="text"
                     value={allergiesText}
                     onChange={(e) => setAllergiesText(e.target.value)}
-                    placeholder="e.g. Penicillin, Sulfa, Latex"
+                    placeholder="e.g. Penicillin, Sulfa, Peanuts"
                     className="w-full px-3 py-2 text-xs rounded-lg border border-outline-variant bg-surface-container-low text-charcoal"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-charcoal mb-1">Health & Dietary Notes</label>
+                  <label className="block text-xs font-semibold text-charcoal mb-1">Health &amp; Dietary Notes</label>
                   <textarea
                     rows={2}
                     value={healthNotes}
                     onChange={(e) => setHealthNotes(e.target.value)}
-                    placeholder="Any relevant clinical background..."
+                    placeholder="Any food sensitivities, special diets, or notes from your doctor..."
                     className="w-full px-3 py-2 text-xs rounded-lg border border-outline-variant bg-surface-container-low text-charcoal"
                   />
                 </div>
@@ -539,14 +539,14 @@ export const ProfileSettingsModal: React.FC = () => {
             {activeTab === 'health' && (
               <div className="space-y-4">
                 <div>
-                  <label className="block text-xs font-bold text-charcoal mb-1">Add Medical Condition</label>
+                  <label className="block text-xs font-bold text-charcoal mb-1">Add a Health Condition</label>
                   <div className="flex space-x-2">
                     <input
                       type="text"
                       value={newCondition}
                       onChange={(e) => setNewCondition(e.target.value)}
                       onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddCondition())}
-                      placeholder="e.g. Hypertension, Asthma, Dengue fever, Liver disease..."
+                      placeholder="e.g. High blood pressure, Asthma, Diabetes, Liver issue..."
                       className="flex-1 px-3 py-2 text-xs rounded-lg border border-outline-variant bg-surface-container-low text-charcoal focus:outline-none focus:ring-2 focus:ring-primary/30"
                     />
                     <button
@@ -562,11 +562,11 @@ export const ProfileSettingsModal: React.FC = () => {
 
                 <div>
                   <label className="block text-xs font-bold text-charcoal mb-2">
-                    Active Condition Flags ({conditions.length})
+                    Your Recorded Conditions ({conditions.length})
                   </label>
                   {conditions.length === 0 ? (
                     <div className="p-6 rounded-xl border border-dashed border-outline-variant bg-surface-container-low text-center text-xs text-charcoal-muted">
-                      No medical conditions recorded. Add conditions above to enable contraindication checking.
+                      No conditions added yet. Add any health conditions above so we can warn you if a medicine isn't safe for you.
                     </div>
                   ) : (
                     <div className="flex flex-wrap gap-2">
@@ -599,7 +599,7 @@ export const ProfileSettingsModal: React.FC = () => {
                 <form onSubmit={handleAddMedication} className="p-3.5 rounded-xl border border-outline-variant bg-surface-container-low space-y-3">
                   <div className="font-bold text-xs text-charcoal flex items-center space-x-1.5">
                     <Plus className="w-4 h-4 text-primary" />
-                    <span>Add New Prescription to Regimen</span>
+                    <span>Add a New Medicine</span>
                   </div>
 
                   {/* Search box with drugbank autocomplete */}
@@ -609,7 +609,7 @@ export const ProfileSettingsModal: React.FC = () => {
                       type="text"
                       value={medQuery}
                       onChange={(e) => handleMedSearch(e.target.value)}
-                      placeholder="Search DrugBank database (e.g. Aspirin, Warfarin, Metformin)..."
+                      placeholder="Search for a medicine (e.g. Aspirin, Metformin, Lisinopril)..."
                       className="w-full pl-9 pr-3 py-1.5 text-xs rounded-lg border border-outline-variant bg-white text-charcoal"
                     />
 
@@ -648,7 +648,7 @@ export const ProfileSettingsModal: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-semibold text-charcoal mb-0.5">Dosage</label>
+                      <label className="block text-[11px] font-semibold text-charcoal mb-0.5">Dose</label>
                       <input
                         type="text"
                         value={newDosage}
@@ -658,16 +658,16 @@ export const ProfileSettingsModal: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-semibold text-charcoal mb-0.5">Frequency</label>
+                      <label className="block text-[11px] font-semibold text-charcoal mb-0.5">How Often</label>
                       <select
                         value={newFrequency}
                         onChange={(e) => setNewFrequency(e.target.value)}
                         className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-outline-variant bg-white text-charcoal"
                       >
-                        <option value="Once daily">Once daily</option>
-                        <option value="Twice daily (BID)">Twice daily (BID)</option>
-                        <option value="Three times daily (TID)">Three times daily (TID)</option>
-                        <option value="As needed (PRN)">As needed (PRN)</option>
+                        <option value="Once daily">Once a day</option>
+                        <option value="Twice daily (BID)">Twice a day</option>
+                        <option value="Three times daily (TID)">Three times a day</option>
+                        <option value="As needed (PRN)">As needed</option>
                       </select>
                     </div>
                   </div>
@@ -678,7 +678,7 @@ export const ProfileSettingsModal: React.FC = () => {
                       disabled={!newMedName.trim() || saving}
                       className="px-4 py-1.5 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-[#B84A24] transition disabled:opacity-40"
                     >
-                      Add Medication
+                      Add Medicine
                     </button>
                   </div>
                 </form>
@@ -687,7 +687,7 @@ export const ProfileSettingsModal: React.FC = () => {
                 <div className="space-y-2">
                   {(profile?.medications || []).length === 0 ? (
                     <div className="p-6 rounded-xl border border-dashed border-outline-variant bg-surface-container-low text-center text-xs text-charcoal-muted">
-                      No active medications. Add your prescriptions above.
+                      No medicines saved yet. Add your daily medicines above.
                     </div>
                   ) : (
                     profile?.medications?.map((m) => (
@@ -717,7 +717,7 @@ export const ProfileSettingsModal: React.FC = () => {
                           type="button"
                           onClick={() => m.id && handleDeleteMedication(m.id)}
                           className="p-1.5 text-charcoal-muted hover:text-error hover:bg-error-container/40 rounded-lg transition"
-                          title="Delete medication"
+                          title="Delete medicine"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>
@@ -734,7 +734,7 @@ export const ProfileSettingsModal: React.FC = () => {
                 <form onSubmit={handleAddContact} className="p-3.5 rounded-xl border border-outline-variant bg-surface-container-low space-y-3">
                   <div className="font-bold text-xs text-charcoal flex items-center space-x-1.5">
                     <Plus className="w-4 h-4 text-primary" />
-                    <span>Add Verified Emergency Contact</span>
+                    <span>Add an Emergency Contact</span>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
@@ -756,12 +756,12 @@ export const ProfileSettingsModal: React.FC = () => {
                         onChange={(e) => setContactRel(e.target.value)}
                         className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-outline-variant bg-white text-charcoal"
                       >
-                        <option value="Spouse">Spouse</option>
+                        <option value="Spouse">Spouse / Partner</option>
                         <option value="Parent">Parent</option>
-                        <option value="Child">Child</option>
-                        <option value="Sibling">Sibling</option>
+                        <option value="Child">Son / Daughter</option>
+                        <option value="Sibling">Brother / Sister</option>
                         <option value="Caregiver">Caregiver</option>
-                        <option value="Physician">Primary Physician</option>
+                        <option value="Physician">Doctor / Clinic</option>
                         <option value="Friend">Friend</option>
                       </select>
                     </div>
@@ -792,7 +792,7 @@ export const ProfileSettingsModal: React.FC = () => {
                 <div className="space-y-2">
                   {(profile?.emergency_contacts || []).length === 0 ? (
                     <div className="p-6 rounded-xl border border-dashed border-outline-variant bg-surface-container-low text-center text-xs text-charcoal-muted">
-                      No emergency contacts specified.
+                      No emergency contacts added yet.
                     </div>
                   ) : (
                     profile?.emergency_contacts?.map((c) => (
@@ -890,10 +890,10 @@ export const ProfileSettingsModal: React.FC = () => {
                 <div className="p-4 rounded-xl border border-error/30 bg-error-container/20 space-y-2">
                   <div className="font-bold text-xs text-error flex items-center space-x-1.5">
                     <AlertTriangle className="w-4 h-4" />
-                    <span>Danger Zone: Delete Account & Clinical History</span>
+                    <span>Danger Zone: Delete Account &amp; Saved Data</span>
                   </div>
                   <p className="text-[11px] text-charcoal-muted">
-                    Permanently delete your user profile, saved medications, emergency contacts, and contraindication history. This action cannot be undone.
+                    Permanently delete your profile, saved medicines, emergency contacts, and check history. This cannot be undone.
                   </p>
 
                   {!showDeleteConfirm ? (
@@ -911,7 +911,7 @@ export const ProfileSettingsModal: React.FC = () => {
                         onClick={handleDeleteAccountData}
                         className="px-4 py-1.5 bg-error text-white text-xs font-bold rounded-lg hover:bg-[#93000A] transition"
                       >
-                        Confirm Permanent Deletion
+                        Yes, Delete My Account
                       </button>
                       <button
                         type="button"

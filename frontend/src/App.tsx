@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { AuthProvider, useAuth } from './context/AuthContext';
-import { Sidebar } from './components/Sidebar';
 import { Header } from './components/Header';
 import { AuthModal } from './components/AuthModal';
 import { OnboardingWizard } from './components/OnboardingWizard';
@@ -12,15 +11,15 @@ import { MyMedicationsView } from './views/MyMedicationsView';
 import { ConditionsView } from './views/ConditionsView';
 import { HistoryView, type HistoryItem } from './views/HistoryView';
 import { AboutView } from './views/AboutView';
+import { ProfileView } from './views/ProfileView';
 import {
-  fetchHealth,
-  saveUserHistory,
   type DrugItem,
   type InteractionCheckResponse,
+  saveUserHistory,
 } from './services/api';
 
 const AppContent: React.FC = () => {
-  const { profile, isAuthenticated } = useAuth();
+  const { profile, isAuthenticated, openAuthModal } = useAuth();
 
   const [currentPath, setCurrentPath] = useState<string>('overview');
   const [selectedMedications, setSelectedMedications] = useState<DrugItem[]>([]);
@@ -34,18 +33,6 @@ const AppContent: React.FC = () => {
       return [];
     }
   });
-  const [dbStatus, setDbStatus] = useState<string>('Live Database v4.2');
-
-  // Check health on mount
-  useEffect(() => {
-    fetchHealth()
-      .then((h) => {
-        setDbStatus(`Live PNAS DB ${h.version} (${h.database_records.toLocaleString()} pairs)`);
-      })
-      .catch(() => {
-        setDbStatus('Offline (Backend connecting...)');
-      });
-  }, []);
 
   // Save history to localStorage
   useEffect(() => {
@@ -55,6 +42,29 @@ const AppContent: React.FC = () => {
       console.error('Failed to save history:', e);
     }
   }, [history]);
+
+  // Auth-gated Navigation:
+  // When not signed in: only 'overview', 'about', 'profile' are accessible.
+  // Clicking any protected feature opens the signup modal.
+  const handleNavigate = (path: string) => {
+    const publicPaths = ['overview', 'about', 'profile'];
+    if (!isAuthenticated && !publicPaths.includes(path)) {
+      openAuthModal('register');
+      return;
+    }
+    setCurrentPath(path);
+  };
+
+  // "Check an Interaction" action:
+  // When not signed in -> opens signup modal (already present in codebase)
+  // When signed in -> navigates straight to interaction checker
+  const handleCheckInteractionClick = () => {
+    if (!isAuthenticated) {
+      openAuthModal('register');
+    } else {
+      setCurrentPath('checker');
+    }
+  };
 
   const handleAddMedication = (drug: DrugItem) => {
     if (!selectedMedications.some((m) => m.id === drug.id)) {
@@ -80,6 +90,11 @@ const AppContent: React.FC = () => {
 
   // Prefill checker from saved user profile
   const handlePrefillFromProfile = () => {
+    if (!isAuthenticated) {
+      openAuthModal('register');
+      return;
+    }
+
     if (profile) {
       if (profile.medications && profile.medications.length > 0) {
         const drugItems: DrugItem[] = profile.medications.map((m) => ({
@@ -140,73 +155,79 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background font-body-md text-charcoal antialiased flex">
-      {/* Fixed Left Navigation Sidebar */}
-      <Sidebar currentPath={currentPath} onNavigate={(path) => setCurrentPath(path)} />
+    <div className="min-h-screen bg-slate-50/60 font-body-md text-charcoal antialiased flex flex-col">
+      {/* ========================================================= */}
+      {/* Clean Top Navbar (replacing side navbar) */}
+      {/* ========================================================= */}
+      <Header
+        currentPath={currentPath}
+        onNavigate={handleNavigate}
+        onCheckInteraction={handleCheckInteractionClick}
+      />
 
-      {/* Main Content Area */}
-      <div className="pl-72 flex flex-col min-h-screen flex-1">
-        {/* Fixed Top Clinical Header */}
-        <Header dbStatus={dbStatus} />
+      {/* ========================================================= */}
+      {/* Main Full-Width Application View Container */}
+      {/* ========================================================= */}
+      <main className="flex-1 w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-8 max-w-7xl mx-auto">
+        {currentPath === 'overview' && (
+          <OverviewView
+            onNavigate={handleNavigate}
+            onPrefillAndCheck={handlePrefillFromProfile}
+            onSelectHistoryResult={handleSelectDirectResult}
+          />
+        )}
 
-        {/* Dynamic Route View */}
-        <main className="relative pt-20 flex-1 w-full px-6 sm:px-8 pb-16 max-w-7xl mx-auto">
-          {currentPath === 'overview' && (
-            <OverviewView
-              onNavigate={(path) => setCurrentPath(path)}
-              onPrefillAndCheck={handlePrefillFromProfile}
-              onSelectHistoryResult={handleSelectDirectResult}
-            />
-          )}
+        {currentPath === 'checker' && (
+          <InteractionCheckerView
+            selectedMedications={selectedMedications}
+            onAddMedication={handleAddMedication}
+            onRemoveMedication={handleRemoveMedication}
+            onClearMedications={handleClearMedications}
+            selectedConditions={selectedConditions}
+            onToggleCondition={handleToggleCondition}
+            onResultsReady={handleResultsReady}
+          />
+        )}
 
-          {currentPath === 'checker' && (
-            <InteractionCheckerView
-              selectedMedications={selectedMedications}
-              onAddMedication={handleAddMedication}
-              onRemoveMedication={handleRemoveMedication}
-              onClearMedications={handleClearMedications}
-              selectedConditions={selectedConditions}
-              onToggleCondition={handleToggleCondition}
-              onResultsReady={handleResultsReady}
-            />
-          )}
+        {currentPath === 'results' && (
+          <InteractionResultsView
+            results={currentResults}
+            onEditMedicines={() => handleNavigate('checker')}
+            onRunNewCheck={() => handleNavigate('checker')}
+          />
+        )}
 
-          {currentPath === 'results' && (
-            <InteractionResultsView
-              results={currentResults}
-              onEditMedicines={() => setCurrentPath('checker')}
-              onRunNewCheck={() => setCurrentPath('checker')}
-            />
-          )}
+        {currentPath === 'my-medications' && (
+          <MyMedicationsView
+            medications={selectedMedications}
+            onRemove={handleRemoveMedication}
+            onNavigateToCheck={() => handleNavigate('checker')}
+          />
+        )}
 
-          {currentPath === 'my-medications' && (
-            <MyMedicationsView
-              medications={selectedMedications}
-              onRemove={handleRemoveMedication}
-              onNavigateToCheck={() => setCurrentPath('checker')}
-            />
-          )}
+        {currentPath === 'conditions' && (
+          <ConditionsView
+            selectedConditions={selectedConditions}
+            onToggleCondition={handleToggleCondition}
+            onNavigateToCheck={() => handleNavigate('checker')}
+          />
+        )}
 
-          {currentPath === 'conditions' && (
-            <ConditionsView
-              selectedConditions={selectedConditions}
-              onToggleCondition={handleToggleCondition}
-              onNavigateToCheck={() => setCurrentPath('checker')}
-            />
-          )}
+        {currentPath === 'history' && (
+          <HistoryView
+            history={history}
+            onSelectHistoryItem={handleSelectHistoryItem}
+            onClearHistory={() => setHistory([])}
+            onNavigateToCheck={() => handleNavigate('checker')}
+          />
+        )}
 
-          {currentPath === 'history' && (
-            <HistoryView
-              history={history}
-              onSelectHistoryItem={handleSelectHistoryItem}
-              onClearHistory={() => setHistory([])}
-              onNavigateToCheck={() => setCurrentPath('checker')}
-            />
-          )}
+        {currentPath === 'about' && <AboutView />}
 
-          {currentPath === 'about' && <AboutView />}
-        </main>
-      </div>
+        {currentPath === 'profile' && (
+          <ProfileView onNavigateToCheck={() => handleNavigate('checker')} />
+        )}
+      </main>
 
       {/* Global Modals & Wizards */}
       <AuthModal />

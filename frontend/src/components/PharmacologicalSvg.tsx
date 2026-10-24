@@ -72,10 +72,10 @@ export const PharmacologicalSvg: React.FC = () => {
         <circle cx="24" cy="24" fill="#E8F6F0" r="10" />
         <path d="M 20 24 L 23 27 L 29 20" stroke="#147D64" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
         <text fill="#111E1B" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="11" fontWeight="700" x="42" y="21">
-          DeepDDI Evaluated
+          Safety AI Checked
         </text>
         <text fill="#3E4944" fontFamily="Inter, sans-serif" fontSize="10" fontWeight="500" x="42" y="34">
-          86 DDI types mapped
+          86 clash types mapped
         </text>
       </g>
 
@@ -85,10 +85,10 @@ export const PharmacologicalSvg: React.FC = () => {
         <circle cx="22" cy="22" fill="#FFDDB6" r="8" />
         <circle cx="22" cy="22" fill="#9A6300" r="3" />
         <text fill="#111E1B" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="10" fontWeight="700" x="38" y="20">
-          CYP450 Pathways
+          Safe Breakdown
         </text>
         <text fill="#794D00" fontFamily="Inter, sans-serif" fontSize="9" fontWeight="500" x="38" y="32">
-          Pharmacokinetic scan
+          Body absorption scan
         </text>
       </g>
     </svg>

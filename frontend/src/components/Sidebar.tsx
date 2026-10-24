@@ -23,11 +23,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPath, onNavigate }) => 
 
   const navItems = [
     { path: 'overview', label: 'Overview', icon: LayoutDashboard },
-    { path: 'checker', label: 'Interaction Checker', icon: SearchCheck },
-    { path: 'results', label: 'Interaction Results', icon: BarChart3 },
-    { path: 'my-medications', label: 'My Medications', icon: Pill },
+    { path: 'checker', label: 'Check Medicines', icon: SearchCheck },
+    { path: 'results', label: 'Safety Results', icon: BarChart3 },
+    { path: 'my-medications', label: 'My Saved Medicines', icon: Pill },
     { path: 'conditions', label: 'Health Conditions', icon: Activity },
-    { path: 'history', label: 'Interaction History', icon: History },
+    { path: 'history', label: 'Past Checks', icon: History },
     { path: 'about', label: 'About & Safety', icon: ShieldCheck },
   ];
 
@@ -46,7 +46,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPath, onNavigate }) => 
             MediGuard <span className="text-teal-600">AI</span>
           </span>
           <span className="text-[11px] font-medium text-slate-500 truncate mt-1">
-            Clinical Pharmacovigilance
+            Smart Medicine Safety
           </span>
         </div>
       </div>
@@ -58,7 +58,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPath, onNavigate }) => 
           className="w-full flex items-center justify-center space-x-2 py-2.5 px-4 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-xs rounded-xl shadow-sm transition-all cursor-pointer"
         >
           <Plus className="w-4 h-4" />
-          <span>New Interaction Check</span>
+          <span>Check Medicines</span>
         </button>
       </div>
 
@@ -91,7 +91,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPath, onNavigate }) => 
               className="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-charcoal hover:bg-surface-container transition text-left cursor-pointer"
             >
               <UserCheck className="w-4 h-4 text-primary" />
-              <span>Profile & Settings</span>
+              <span>My Health Profile</span>
             </button>
           ) : (
             <button
@@ -99,7 +99,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPath, onNavigate }) => 
               className="w-full flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-primary hover:bg-primary-container/40 transition text-left cursor-pointer"
             >
               <UserCheck className="w-4 h-4 text-primary" />
-              <span>Sign In / Register</span>
+              <span>Sign In / Create Account</span>
             </button>
           )}
         </div>

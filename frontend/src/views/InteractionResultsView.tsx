@@ -20,15 +20,15 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
         <div className="w-16 h-16 rounded-2xl bg-surface-container flex items-center justify-center text-primary mb-4 shadow-sm">
           <span className="material-symbols-outlined text-[36px]">analytics</span>
         </div>
-        <h2 className="font-headline-md text-headline-md text-on-surface">No Analysis Available</h2>
+        <h2 className="font-headline-md text-headline-md text-on-surface">No Safety Report Yet</h2>
         <p className="font-body-md text-body-md text-on-surface-variant max-w-md mt-2 mb-6">
-          Please add medications in the Interaction Checker and run an evaluation to generate a clinical safety report.
+          Please choose at least 2 medicines in the Medicine Checker to see if they are safe to take together.
         </p>
         <button
           onClick={onRunNewCheck}
           className="px-6 py-3 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg shadow-sm hover:bg-primary-container transition-colors cursor-pointer"
         >
-          Go to Interaction Checker
+          Go to Medicine Checker
         </button>
       </div>
     );
@@ -45,21 +45,11 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
       {/* Top Context Header & Actions */}
       <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg mb-space-xl">
         <div className="space-y-space-xs">
-          <div className="flex items-center gap-space-sm text-primary">
-            <span className="material-symbols-outlined text-[18px]">verified</span>
-            <span className="font-label-md text-label-md uppercase tracking-wider font-bold">
-              Clinical Pharmacology Synthesis
-            </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
-            <span className="font-label-md text-label-md text-on-surface-variant font-mono">
-              REF: #MG-8841-CLINICAL
-            </span>
-          </div>
           <h1 className="font-headline-lg text-headline-lg text-on-surface tracking-tight">
-            Medication Interaction &amp; Safety Report
+            Your Medicine Safety Report
           </h1>
           <p className="font-body-md text-body-md text-on-surface-variant max-w-3xl">
-            Algorithmic cross-analysis performed across active multi-drug regimens, secondary metabolic pathways, and concurrent patient chronic indications.
+            We checked your medicines against each other, looking for unwanted reactions and clashes with your health conditions.
           </p>
         </div>
 
@@ -78,7 +68,7 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
             className="flex items-center gap-space-xs px-space-md py-2.5 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg shadow-sm hover:bg-primary-container transition-colors cursor-pointer"
           >
             <span className="material-symbols-outlined text-[18px]">restart_alt</span>
-            <span>Run New Check</span>
+            <span>Start New Check</span>
           </button>
         </div>
       </div>
@@ -93,13 +83,13 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
             </div>
             <div className="min-w-0">
               <div className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">
-                Regimen Evaluated
+                Medicines Checked
               </div>
               <div className="font-title-md text-title-md text-on-surface truncate">
-                {summary.total_medications} Active Therapeutics
+                {summary.total_medications} Medicines
               </div>
               <div className="font-body-sm text-body-sm text-outline truncate">
-                {summary.total_pairs_evaluated} Pairwise Combinations Tested
+                {summary.total_pairs_evaluated} Pairs Tested
               </div>
             </div>
           </div>
@@ -111,13 +101,13 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
             </div>
             <div className="min-w-0">
               <div className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">
-                Interactions Found
+                Warnings Found
               </div>
               <div className="font-title-md text-title-md text-on-surface truncate">
-                {summary.verified_interactions_count + summary.predicted_interactions_count} Signals Detected
+                {summary.verified_interactions_count + summary.predicted_interactions_count} Possible Clashes
               </div>
               <div className="font-body-sm text-body-sm text-outline truncate">
-                {summary.verified_interactions_count} Verified DB • {summary.predicted_interactions_count} DeepDDI Neural
+                {summary.verified_interactions_count} Verified Research • {summary.predicted_interactions_count} AI Predictions
               </div>
             </div>
           </div>
@@ -129,13 +119,13 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
             </div>
             <div className="min-w-0">
               <div className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">
-                Computation Node
+                System Status
               </div>
               <div className="font-title-md text-title-md text-on-surface">
-                Live Engine Session
+                System Active
               </div>
               <div className="font-body-sm text-body-sm text-outline">
-                DrugBank Corpus • Synced
+                Medical Database • Up to Date
               </div>
             </div>
           </div>
@@ -145,12 +135,12 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
             {summary.has_critical_interaction ? (
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
                 <span className="w-2 h-2 rounded-full bg-error animate-ping"></span>
-                Action Required
+                Please Review Warnings
               </span>
             ) : (
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold">
                 <span className="material-symbols-outlined text-[16px]">check_circle</span>
-                No Severe Database Signals
+                No Serious Clashes Found
               </span>
             )}
           </div>
@@ -164,24 +154,24 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
             <div className="flex flex-wrap items-center gap-space-sm">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold">
                 <span className="material-symbols-outlined text-[15px]">verified</span>
-                {summary.verified_interactions_count} Documented Research Interactions
+                {summary.verified_interactions_count} Verified Medical Warnings
               </span>
               {summary.predicted_interactions_count > 0 && (
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
                   <span className="material-symbols-outlined text-[15px]">psychology</span>
-                  {summary.predicted_interactions_count} DeepDDI Neural Predictions
+                  {summary.predicted_interactions_count} Smart AI Estimates
                 </span>
               )}
               {summary.insufficient_evidence_count > 0 && (
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">
                   <span className="material-symbols-outlined text-[15px]">help_outline</span>
-                  {summary.insufficient_evidence_count} Insufficient Evidence
+                  {summary.insufficient_evidence_count} Need More Info
                 </span>
               )}
             </div>
 
             <span className="font-label-sm text-label-sm text-outline font-mono">
-              Dual-Path Precision Screening
+              Double-Checked for Safety
             </span>
           </div>
 
@@ -192,10 +182,10 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
               </div>
               <div className="flex flex-col">
                 <span className="font-title-md text-title-md text-on-surface font-semibold">
-                  Evidence Status Declaration &amp; Severity Transparency
+                  Understanding Your Results
                 </span>
                 <p className="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
-                  The peer-reviewed research data provides validated <strong>pharmacological interaction types</strong> (e.g. metabolism changes, absorption inhibition, clearance reduction). Clinical severity tiers (Low/Moderate/High) are explicitly documented as <strong>Unverified / Clinical Severity Assessment Unavailable</strong> to prevent clinical misinformation.
+                  Verified medical research tells us how medicines affect each other (for example, slowing down how your body clears them, or increasing side effects). We clearly show whether a warning comes from proven medical studies or AI estimates so you always know the source.
                 </p>
               </div>
             </div>
@@ -207,7 +197,7 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
       <div className="flex flex-col gap-4 mb-space-xl">
         <h2 className="font-headline-sm text-headline-sm text-on-surface tracking-tight flex items-center gap-2">
           <span className="material-symbols-outlined text-primary text-[24px]">compare_arrows</span>
-          <span>Pairwise Therapeutic Evaluations ({interactions.length})</span>
+          <span>Medicine Clashes &amp; Explanations ({interactions.length})</span>
         </h2>
 
         {interactions.map((pair, idx) => {
@@ -251,17 +241,17 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
                       {/* Evidence Badge */}
                       {isVerified && (
                         <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-primary-container/20 text-primary border border-primary/20">
-                          Verified Research Evidence
+                          Verified Medical Fact
                         </span>
                       )}
                       {isPredicted && (
                         <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-secondary-container/40 text-secondary border border-secondary/20">
-                          DeepDDI Prediction ({Math.round((pair.confidence || 0) * 100)}% Confidence)
+                          AI Safety Prediction ({Math.round((pair.confidence || 0) * 100)}% Confidence)
                         </span>
                       )}
                       {!isVerified && !isPredicted && (
                         <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-surface-container text-on-surface-variant">
-                          No Documented Record
+                          No Known Clashes
                         </span>
                       )}
                     </div>
@@ -286,9 +276,9 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
                   <div className="p-4 rounded-xl bg-surface-container-lowest border border-surface-variant/30">
                     <div className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider mb-2">
                       <span className="material-symbols-outlined text-[16px]">science</span>
-                      <span>Pharmacological Mechanism &amp; Effect</span>
+                      <span>What Happens When Taken Together</span>
                       {pair.interaction_type && (
-                        <span className="text-outline font-mono">• DDI Type #{pair.interaction_type}</span>
+                        <span className="text-outline font-mono">• Safety Type #{pair.interaction_type}</span>
                       )}
                     </div>
                     <p className="font-body-md text-body-md text-on-surface leading-relaxed">
@@ -300,25 +290,25 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="p-3.5 rounded-xl bg-surface-container-lowest border border-surface-variant/30 flex flex-col">
                       <span className="text-xs text-on-surface-variant uppercase tracking-wider font-semibold mb-1">
-                        Data Provenance &amp; Source
+                        Where This Information Comes From
                       </span>
                       <span className="font-body-md text-body-md text-on-surface font-medium">
                         {pair.source}
                       </span>
                       <span className="text-xs text-outline mt-1">
-                        Corroborated by PNAS DeepDDI Systematic Gold-Standard Dataset
+                        Verified in published medical research datasets
                       </span>
                     </div>
 
                     <div className="p-3.5 rounded-xl bg-surface-container-lowest border border-surface-variant/30 flex flex-col">
                       <span className="text-xs text-on-surface-variant uppercase tracking-wider font-semibold mb-1">
-                        Clinical Severity Assessment
+                        Risk Level
                       </span>
                       <span className="font-body-md text-body-md text-error font-medium">
                         {pair.severity}
                       </span>
                       <span className="text-xs text-outline mt-1">
-                        Requires clinical evaluation by attending pharmacist
+                        Always consult your doctor or pharmacist before changing any medicines
                       </span>
                     </div>
                   </div>
@@ -328,10 +318,10 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
                     <div className="p-4 rounded-xl bg-surface-container-lowest border border-surface-variant/30">
                       <div className="flex items-center gap-2 text-secondary font-bold text-xs uppercase tracking-wider mb-2">
                         <span className="material-symbols-outlined text-[16px]">swap_horiz</span>
-                        <span>Potential Lower-Risk Alternatives (Research Dataset SD04)</span>
+                        <span>Safer Alternatives to Ask Your Doctor About</span>
                       </div>
                       <p className="text-xs text-on-surface-variant mb-2">
-                        The following therapeutic alternatives were predicted to lower negative health effects in research models:
+                        Medical studies suggest these alternative medicines may carry a lower risk of side effects:
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {pair.alternatives.map((alt) => (
@@ -358,7 +348,7 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
           <div className="flex items-center gap-2 mb-4">
             <span className="material-symbols-outlined text-secondary text-[24px]">vital_signs</span>
             <h3 className="font-title-lg text-title-lg text-on-surface font-semibold">
-              Concurrent Condition &amp; Dietary Alerts ({condition_alerts.length})
+              Important Warnings for Your Health &amp; Diet ({condition_alerts.length})
             </h3>
           </div>
 
@@ -378,11 +368,11 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
                     </span>
                     <span className="text-outline text-xs">•</span>
                     <span className="font-label-sm text-label-sm text-primary font-semibold">
-                      Therapeutic: {alert.drug_name}
+                      Medicine: {alert.drug_name}
                     </span>
                     {alert.food_constituent && (
                       <span className="font-label-sm text-label-sm text-outline">
-                        (Constituent: {alert.food_constituent})
+                        (Food/Drink: {alert.food_constituent})
                       </span>
                     )}
                   </div>
@@ -400,7 +390,7 @@ export const InteractionResultsView: React.FC<InteractionResultsViewProps> = ({
       <div className="p-space-lg rounded-2xl bg-surface-container-low border border-surface-variant/50 text-body-sm text-on-surface-variant leading-relaxed">
         <div className="flex items-center gap-2 text-primary font-bold mb-2">
           <span className="material-symbols-outlined text-[20px]">verified_user</span>
-          <span className="font-label-lg text-label-lg">Clinical Safety Disclaimer &amp; Patient Notice</span>
+          <span className="font-label-lg text-label-lg">Important Safety Note</span>
         </div>
         <p>{disclaimer}</p>
       </div>

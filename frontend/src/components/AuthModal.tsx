@@ -114,7 +114,7 @@ export const AuthModal: React.FC = () => {
             <div className="w-9 h-9 rounded-xl bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20">
               <ShieldCheck className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xs uppercase tracking-wider font-semibold text-teal-100">MediGuard AI Clinical Suite</span>
+            <span className="text-xs uppercase tracking-wider font-semibold text-teal-100">MediGuard AI Medicine Safety</span>
           </div>
           <h2 className="text-2xl font-bold font-title-lg tracking-tight">
             {authModalTab === 'login' && 'Welcome Back'}
@@ -122,9 +122,9 @@ export const AuthModal: React.FC = () => {
             {authModalTab === 'forgot' && 'Reset Password'}
           </h2>
           <p className="text-xs text-slate-200 mt-1">
-            {authModalTab === 'login' && 'Access your personalized interaction guard and medication profile.'}
-            {authModalTab === 'register' && 'Setup your profile for automated contraindication checking.'}
-            {authModalTab === 'forgot' && 'Provide your registered email to reset your account credentials.'}
+            {authModalTab === 'login' && 'Sign in to check your medicines and view your saved health details.'}
+            {authModalTab === 'register' && 'Create your free account to save your medicines and get personal safety warnings.'}
+            {authModalTab === 'forgot' && 'Enter your email and choose a new password to get back into your account.'}
           </p>
         </div>
 
@@ -150,7 +150,7 @@ export const AuthModal: React.FC = () => {
                 : 'border-transparent text-charcoal-muted hover:text-charcoal'
             }`}
           >
-            Register Account
+            Create Account
           </button>
           <button
             type="button"
@@ -193,7 +193,7 @@ export const AuthModal: React.FC = () => {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="doctor.name@hospital.org"
+                    placeholder="yourname@example.com"
                     className="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-outline-variant bg-surface-container-low focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary text-charcoal placeholder-charcoal-muted/60 transition"
                   />
                 </div>
@@ -228,7 +228,7 @@ export const AuthModal: React.FC = () => {
                 disabled={submitting}
                 className="w-full mt-2 py-2.5 px-4 rounded-xl bg-primary hover:bg-[#B84A24] text-white font-semibold text-sm shadow-md shadow-primary/20 hover:shadow-lg transition flex items-center justify-center space-x-2 disabled:opacity-50"
               >
-                <span>{submitting ? 'Authenticating...' : 'Sign In to MediGuard'}</span>
+                <span>{submitting ? 'Signing in...' : 'Sign In'}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </form>
@@ -248,7 +248,7 @@ export const AuthModal: React.FC = () => {
                     required
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    placeholder="Dr. Eleanor Vance"
+                    placeholder="Sarah Johnson"
                     className="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-outline-variant bg-surface-container-low focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary text-charcoal placeholder-charcoal-muted/60 transition"
                   />
                 </div>
@@ -265,7 +265,7 @@ export const AuthModal: React.FC = () => {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="eleanor@clinic.org"
+                    placeholder="sarah@example.com"
                     className="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-outline-variant bg-surface-container-low focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary text-charcoal placeholder-charcoal-muted/60 transition"
                   />
                 </div>
@@ -305,7 +305,7 @@ export const AuthModal: React.FC = () => {
               </div>
 
               <div className="text-[11px] text-charcoal-muted bg-surface-container-low p-2.5 rounded-lg border border-outline-variant/60">
-                🔒 <strong>Privacy Assurance:</strong> Personal health records are isolated and encrypted per user. Never shared with unapproved third parties.
+                🔒 <strong>Safe &amp; Private:</strong> Your health details are kept strictly private and secure. We never share or sell your data.
               </div>
 
               <button
@@ -313,7 +313,7 @@ export const AuthModal: React.FC = () => {
                 disabled={submitting}
                 className="w-full py-2.5 px-4 rounded-xl bg-primary hover:bg-[#B84A24] text-white font-semibold text-sm shadow-md shadow-primary/20 hover:shadow-lg transition flex items-center justify-center space-x-2 disabled:opacity-50"
               >
-                <span>{submitting ? 'Creating Profile...' : 'Complete Registration & Begin Setup'}</span>
+                <span>{submitting ? 'Creating account...' : 'Create Account & Begin Setup'}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </form>

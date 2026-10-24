@@ -16,17 +16,11 @@ export const MyMedicationsView: React.FC<MyMedicationsViewProps> = ({
       {/* Top Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
         <div className="flex flex-col max-w-2xl">
-          <div className="flex items-center gap-space-xs text-primary mb-2">
-            <span className="material-symbols-outlined text-[18px]">medication</span>
-            <span className="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">
-              Patient Therapeutic Cabinet
-            </span>
-          </div>
           <h1 className="font-headline-lg text-headline-lg text-on-surface tracking-tight">
-            My Medications &amp; Active Regimen
+            My Saved Medicines
           </h1>
           <p className="font-body-md text-body-md text-on-surface-variant mt-1.5 leading-relaxed">
-            Manage your ongoing therapeutic profile, active prescriptions, and OTC regimens ready for real-time interaction screening.
+            Keep track of your daily prescription medicines, over-the-counter drugs, and vitamins, and check if they are safe to take together.
           </p>
         </div>
 
@@ -35,7 +29,7 @@ export const MyMedicationsView: React.FC<MyMedicationsViewProps> = ({
           className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg shadow-sm hover:bg-primary-container transition-colors cursor-pointer"
         >
           <span className="material-symbols-outlined text-[18px]">rule</span>
-          <span>Run Safety Check</span>
+          <span>Check Safety Now</span>
         </button>
       </div>
 
@@ -44,13 +38,13 @@ export const MyMedicationsView: React.FC<MyMedicationsViewProps> = ({
         <div className="flex items-center justify-between mb-6 pb-4 border-b border-surface-variant/40">
           <div className="flex items-center gap-2">
             <span className="font-title-md text-title-md text-on-surface font-semibold">
-              Currently Logged Therapeutics
+              Saved Medicines
             </span>
             <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-surface-container text-primary">
-              {medications.length} Active
+              {medications.length} Saved
             </span>
           </div>
-          <span className="text-xs text-outline font-mono">Synced with Clinical Database</span>
+          <span className="text-xs text-outline font-mono">Up to date with safety database</span>
         </div>
 
         {medications.length === 0 ? (
@@ -58,9 +52,9 @@ export const MyMedicationsView: React.FC<MyMedicationsViewProps> = ({
             <span className="material-symbols-outlined text-outline text-[48px] mb-3">
               medication_liquid
             </span>
-            <h3 className="font-title-lg text-title-lg text-on-surface">No Medications In Cabinet</h3>
+            <h3 className="font-title-lg text-title-lg text-on-surface">No Medicines in Your Cabinet Yet</h3>
             <p className="font-body-md text-body-md text-on-surface-variant max-w-sm mt-1 mb-6">
-              Add your current prescription medicines, over-the-counter drugs, or vitamins to screen them together.
+              Add the medicines, supplements, or vitamins you take every day to see if they are safe together.
             </p>
             <button
               onClick={onNavigateToCheck}
@@ -74,11 +68,11 @@ export const MyMedicationsView: React.FC<MyMedicationsViewProps> = ({
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="border-b border-surface-variant/40 text-on-surface-variant font-label-sm text-label-sm uppercase">
-                  <th className="py-3 px-4">Therapeutic Name</th>
-                  <th className="py-3 px-4">DrugBank ID</th>
-                  <th className="py-3 px-4">Pharmacological Category</th>
-                  <th className="py-3 px-4">Type</th>
-                  <th className="py-3 px-4 text-right">Actions</th>
+                  <th className="py-3 px-4">Medicine Name</th>
+                  <th className="py-3 px-4">Medical ID</th>
+                  <th className="py-3 px-4">Medicine Type / Purpose</th>
+                  <th className="py-3 px-4">Classification</th>
+                  <th className="py-3 px-4 text-right">Action</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-surface-variant/20 font-body-sm text-body-sm text-on-surface">
@@ -94,7 +88,7 @@ export const MyMedicationsView: React.FC<MyMedicationsViewProps> = ({
                       {med.id}
                     </td>
                     <td className="py-4 px-4 text-on-surface-variant max-w-xs truncate">
-                      {med.categories[0] || 'Approved Therapeutic'}
+                      {med.categories[0] || 'Approved Medicine'}
                     </td>
                     <td className="py-4 px-4">
                       <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-surface-container text-primary">
@@ -105,7 +99,7 @@ export const MyMedicationsView: React.FC<MyMedicationsViewProps> = ({
                       <button
                         onClick={() => onRemove(med.id)}
                         className="text-outline hover:text-error text-xs font-semibold cursor-pointer p-1.5 rounded hover:bg-error-container/20 transition-colors"
-                        title="Remove from regimen"
+                        title="Remove medicine"
                       >
                         Remove
                       </button>

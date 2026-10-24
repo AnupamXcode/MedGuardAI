@@ -10,38 +10,38 @@ const CONDITION_CATALOG = [
   {
     name: 'Hypertension',
     category: 'Cardiovascular',
-    description: 'Elevated systemic arterial blood pressure requiring chronic therapeutic control with ACE inhibitors, ARBs, or CCBs.',
-    relevantClasses: ['Antihypertensives', 'Diuretics', 'Vasodilators']
+    description: 'High blood pressure that puts extra strain on your heart and arteries over time.',
+    relevantClasses: ['Blood Pressure Medicines', 'Water Pills', 'Heart Medicines']
   },
   {
     name: 'Type 2 Diabetes',
     category: 'Endocrine & Metabolic',
-    description: 'Impaired glucose tolerance and insulin resistance requiring metformin, SGLT2 inhibitors, or insulin therapy.',
-    relevantClasses: ['Hypoglycemic Agents', 'Insulins', 'Biguanides']
+    description: 'High blood sugar levels where your body has trouble converting sugar into energy.',
+    relevantClasses: ['Blood Sugar Medicines', 'Insulin', 'Metformin']
   },
   {
     name: 'Renal Impairment',
-    category: 'Renal & Urological',
-    description: 'Reduced glomerular filtration rate (eGFR) affecting primary renal clearance and drug half-life elimination.',
-    relevantClasses: ['Nephrotoxic Agents', 'Renally Cleared Drugs']
+    category: 'Kidney Health',
+    description: 'Reduced kidney function, which can slow down how fast medicines leave your body.',
+    relevantClasses: ['Kidney-Sensitive Medicines', 'Pain Relievers']
   },
   {
     name: 'Atrial Fibrillation',
-    category: 'Cardiovascular / Hematologic',
-    description: 'Supraventricular tachyarrhythmia with elevated thromboembolic risk requiring anticoagulant prophylaxis (e.g. Warfarin, DOACs).',
-    relevantClasses: ['Anticoagulants', 'Antiarrhythmics', 'Beta Blockers']
+    category: 'Heart Rhythm',
+    description: 'An irregular or rapid heart rhythm that can increase the risk of blood clots or stroke.',
+    relevantClasses: ['Blood Thinners', 'Heart Rhythm Medicines', 'Beta Blockers']
   },
   {
     name: 'Hepatic Impairment',
-    category: 'Gastrointestinal & Hepatic',
-    description: 'Altered hepatic CYP450 enzyme metabolism and compromised first-pass bioavailability clearance.',
-    relevantClasses: ['Hepatotoxic Therapeutics', 'CYP3A4 Substrates']
+    category: 'Liver Health',
+    description: 'Liver weakness or reduced liver function, affecting how your body breaks down medicines.',
+    relevantClasses: ['Liver-Processed Medicines', 'Pain Medicines']
   },
   {
     name: 'Asthma / COPD',
-    category: 'Pulmonary & Respiratory',
-    description: 'Chronic obstructive airway hyper-reactivity sensitive to beta-receptor antagonism and NSAID-induced bronchospasm.',
-    relevantClasses: ['Bronchodilators', 'Inhaled Corticosteroids']
+    category: 'Lungs & Breathing',
+    description: 'Breathing difficulties and sensitive airways that can react to dust, cold weather, or certain medicines.',
+    relevantClasses: ['Inhalers', 'Steroid Sprays', 'Airway Relaxers']
   }
 ];
 
@@ -55,17 +55,11 @@ export const ConditionsView: React.FC<ConditionsViewProps> = ({
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
         <div className="flex flex-col max-w-2xl">
-          <div className="flex items-center gap-space-xs text-primary mb-2">
-            <span className="material-symbols-outlined text-[18px]">clinical_notes</span>
-            <span className="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">
-              Chronic Disease Profiles
-            </span>
-          </div>
           <h1 className="font-headline-lg text-headline-lg text-on-surface tracking-tight">
-            Patient Health Conditions
+            Health Conditions &amp; Illnesses
           </h1>
           <p className="font-body-md text-body-md text-on-surface-variant mt-1.5 leading-relaxed">
-            Configure chronic indications to cross-reference multi-drug regimens with disease-drug interactions from research dataset SD06.
+            Select any health conditions you have so we can flag medicines that might not be safe for you.
           </p>
         </div>
 
@@ -74,7 +68,7 @@ export const ConditionsView: React.FC<ConditionsViewProps> = ({
           className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg shadow-sm hover:bg-primary-container transition-colors cursor-pointer"
         >
           <span className="material-symbols-outlined text-[18px]">rule</span>
-          <span>Apply in Checker</span>
+          <span>Check With My Conditions</span>
         </button>
       </div>
 
@@ -130,7 +124,7 @@ export const ConditionsView: React.FC<ConditionsViewProps> = ({
       <div className="p-4 rounded-xl bg-surface-container-low border border-surface-variant/40 text-body-sm text-outline flex items-start gap-2">
         <span className="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">info</span>
         <span>
-          <strong>Informational Context Notice:</strong> Health condition data is cross-referenced with KEGG Disease interactions from research dataset SD06. This feature provides educational context and does not deliver definitive diagnostic evaluations.
+          <strong>Safety Notice:</strong> Health condition alerts help you and your doctor spot medicines that may need extra care with your health history. They do not replace personalized advice from your doctor or healthcare provider.
         </span>
       </div>
     </div>
