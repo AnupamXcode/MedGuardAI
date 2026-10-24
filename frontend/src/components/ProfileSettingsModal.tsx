@@ -79,10 +79,36 @@ export const ProfileSettingsModal: React.FC = () => {
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
+  // Active session medications state
+  const [sessionMeds, setSessionMeds] = useState<Array<{ id: string; name: string }>>([]);
+
   // Feedback states
   const [saving, setSaving] = useState(false);
   const [statusMsg, setStatusMsg] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+
+  const loadSessionMeds = () => {
+    try {
+      const raw = localStorage.getItem('mediguard_active_meds');
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) {
+          setSessionMeds(
+            parsed
+              .map((m: any) => ({
+                id: m.id || m.drug_id || '',
+                name: m.name || m.drug_name || '',
+              }))
+              .filter((m) => Boolean(m.name))
+          );
+          return;
+        }
+      }
+    } catch {
+      // ignore
+    }
+    setSessionMeds([]);
+  };
 
   useEffect(() => {
     if (user) {
@@ -99,7 +125,8 @@ export const ProfileSettingsModal: React.FC = () => {
       }
       setConditions(profile.conditions || []);
     }
-  }, [user, profile]);
+    loadSessionMeds();
+  }, [user, profile, isProfileSettingsOpen]);
 
   if (!isProfileSettingsOpen) return null;
 
@@ -177,6 +204,40 @@ export const ProfileSettingsModal: React.FC = () => {
     }
   };
 
+  const unsavedSessionMeds = sessionMeds.filter(
+    (sm) =>
+      !(profile?.medications || []).some(
+        (pm) => pm.drug_name.toLowerCase() === sm.name.toLowerCase()
+      )
+  );
+
+  const handleSyncSessionMeds = async () => {
+    if (unsavedSessionMeds.length === 0) return;
+    setSaving(true);
+    setStatusMsg(null);
+    try {
+      for (const sm of unsavedSessionMeds) {
+        await addUserMedication({
+          drug_id: sm.id || undefined,
+          drug_name: sm.name,
+          dosage: 'Standard dose',
+          frequency: 'Once daily',
+          is_active: true,
+        });
+      }
+      await refreshProfile();
+      loadSessionMeds();
+      setStatusMsg({
+        type: 'success',
+        text: `Saved ${unsavedSessionMeds.length} medicine(s) to your permanent profile cabinet!`,
+      });
+    } catch (err: any) {
+      setStatusMsg({ type: 'error', text: err.message || 'Failed to save session medicines.' });
+    } finally {
+      setSaving(false);
+    }
+  };
+
   const handleAddMedication = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!newMedName.trim()) return;
@@ -190,10 +251,31 @@ export const ProfileSettingsModal: React.FC = () => {
         frequency: newFrequency,
         is_active: true,
       });
+
+      // Also ensure it is present in active checker session
+      try {
+        const raw = localStorage.getItem('mediguard_active_meds');
+        const list = raw ? JSON.parse(raw) : [];
+        if (!list.some((x: any) => (x.name || '').toLowerCase() === newMedName.trim().toLowerCase())) {
+          list.push({
+            id: newMedId || newMedName.trim(),
+            name: newMedName.trim(),
+            type: 'Prescription',
+            groups: 'approved',
+            categories: [newDosage.trim() || 'Standard dose'],
+          });
+          localStorage.setItem('mediguard_active_meds', JSON.stringify(list));
+          window.dispatchEvent(new Event('mediguard_meds_updated'));
+        }
+      } catch {
+        // ignore
+      }
+
       setNewMedName('');
       setNewMedId('');
       setNewDosage('');
       await refreshProfile();
+      loadSessionMeds();
       setStatusMsg({ type: 'success', text: 'Medicine added to your saved list.' });
     } catch (err: any) {
       setStatusMsg({ type: 'error', text: err.message || 'Failed to add medicine.' });
@@ -202,11 +284,25 @@ export const ProfileSettingsModal: React.FC = () => {
     }
   };
 
-  const handleDeleteMedication = async (id: number) => {
+  const handleDeleteMedication = async (id: number, medName?: string) => {
     if (!window.confirm('Are you sure you want to remove this medicine from your list?')) return;
     try {
       await deleteUserMedication(id);
       await refreshProfile();
+      if (medName) {
+        try {
+          const raw = localStorage.getItem('mediguard_active_meds');
+          if (raw) {
+            const list = JSON.parse(raw);
+            const filtered = list.filter((x: any) => (x.name || '').toLowerCase() !== medName.toLowerCase());
+            localStorage.setItem('mediguard_active_meds', JSON.stringify(filtered));
+            window.dispatchEvent(new Event('mediguard_meds_updated'));
+          }
+        } catch {
+          // ignore
+        }
+      }
+      loadSessionMeds();
       setStatusMsg({ type: 'success', text: 'Medicine removed.' });
     } catch (err: any) {
       setStatusMsg({ type: 'error', text: err.message || 'Failed to remove medicine.' });
@@ -684,10 +780,47 @@ export const ProfileSettingsModal: React.FC = () => {
                 </form>
 
                 {/* List of medications */}
-                <div className="space-y-2">
+                <div className="space-y-3">
+                  {/* Unsaved active session medicines prompt */}
+                  {unsavedSessionMeds.length > 0 && (
+                    <div className="p-3.5 rounded-xl bg-primary-container/50 border border-primary/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs animate-fadeIn">
+                      <div className="space-y-0.5">
+                        <div className="text-xs font-bold text-primary flex items-center space-x-1.5">
+                          <Pill className="w-4 h-4 text-primary" />
+                          <span>
+                            {unsavedSessionMeds.length} active medicine{unsavedSessionMeds.length > 1 ? 's' : ''} found in your checker session:
+                          </span>
+                        </div>
+                        <p className="text-[11px] font-medium text-charcoal">
+                          {unsavedSessionMeds.map((m) => m.name).join(', ')}
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        disabled={saving}
+                        onClick={handleSyncSessionMeds}
+                        className="px-3.5 py-1.5 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-[#B84A24] transition shrink-0 flex items-center space-x-1.5 shadow-sm disabled:opacity-50 cursor-pointer"
+                      >
+                        <Plus className="w-3.5 h-3.5" />
+                        <span>{saving ? 'Saving...' : 'Save to My Profile'}</span>
+                      </button>
+                    </div>
+                  )}
+
                   {(profile?.medications || []).length === 0 ? (
-                    <div className="p-6 rounded-xl border border-dashed border-outline-variant bg-surface-container-low text-center text-xs text-charcoal-muted">
-                      No medicines saved yet. Add your daily medicines above.
+                    <div className="p-6 rounded-xl border border-dashed border-outline-variant bg-surface-container-low text-center space-y-2">
+                      <div className="text-xs text-charcoal font-medium">
+                        No medicines permanently saved in your profile yet.
+                      </div>
+                      {unsavedSessionMeds.length > 0 ? (
+                        <p className="text-[11px] text-charcoal-muted max-w-md mx-auto">
+                          You have {unsavedSessionMeds.length} medication(s) currently open in your checker session. Click <strong>"Save to My Profile"</strong> above to permanently save them to your account.
+                        </p>
+                      ) : (
+                        <p className="text-[11px] text-charcoal-muted">
+                          Add your daily medicines using the form above to check interactions anytime.
+                        </p>
+                      )}
                     </div>
                   ) : (
                     profile?.medications?.map((m) => (
@@ -715,7 +848,7 @@ export const ProfileSettingsModal: React.FC = () => {
                         </div>
                         <button
                           type="button"
-                          onClick={() => m.id && handleDeleteMedication(m.id)}
+                          onClick={() => m.id && handleDeleteMedication(m.id, m.drug_name)}
                           className="p-1.5 text-charcoal-muted hover:text-error hover:bg-error-container/40 rounded-lg transition"
                           title="Delete medicine"
                         >

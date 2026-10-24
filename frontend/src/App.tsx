@@ -22,7 +22,14 @@ const AppContent: React.FC = () => {
   const { profile, isAuthenticated, openAuthModal } = useAuth();
 
   const [currentPath, setCurrentPath] = useState<string>('overview');
-  const [selectedMedications, setSelectedMedications] = useState<DrugItem[]>([]);
+  const [selectedMedications, setSelectedMedications] = useState<DrugItem[]>(() => {
+    try {
+      const saved = localStorage.getItem('mediguard_active_meds');
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  });
   const [selectedConditions, setSelectedConditions] = useState<string[]>([]);
   const [currentResults, setCurrentResults] = useState<InteractionCheckResponse | null>(null);
   const [history, setHistory] = useState<HistoryItem[]>(() => {
@@ -34,7 +41,15 @@ const AppContent: React.FC = () => {
     }
   });
 
-  // Save history to localStorage
+  // Save active medications and history to localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('mediguard_active_meds', JSON.stringify(selectedMedications));
+    } catch (e) {
+      console.error('Failed to save active meds:', e);
+    }
+  }, [selectedMedications]);
+
   useEffect(() => {
     try {
       localStorage.setItem('mediguard_history', JSON.stringify(history));
@@ -42,6 +57,40 @@ const AppContent: React.FC = () => {
       console.error('Failed to save history:', e);
     }
   }, [history]);
+
+  // Synchronize when medications are added/removed in profile modal
+  useEffect(() => {
+    const handleSyncFromStorage = () => {
+      try {
+        const saved = localStorage.getItem('mediguard_active_meds');
+        if (saved) {
+          setSelectedMedications(JSON.parse(saved));
+        }
+      } catch {
+        // ignore
+      }
+    };
+    window.addEventListener('mediguard_meds_updated', handleSyncFromStorage);
+    return () => {
+      window.removeEventListener('mediguard_meds_updated', handleSyncFromStorage);
+    };
+  }, []);
+
+  // When user logs in with saved profile medications, if active session is empty, auto-populate from profile
+  useEffect(() => {
+    if (isAuthenticated && profile?.medications && profile.medications.length > 0) {
+      if (selectedMedications.length === 0) {
+        const drugItems: DrugItem[] = profile.medications.map((m) => ({
+          id: m.drug_id || m.drug_name,
+          name: m.drug_name,
+          type: 'Prescription',
+          groups: 'approved',
+          categories: [m.dosage || 'Standard dose'],
+        }));
+        setSelectedMedications(drugItems);
+      }
+    }
+  }, [isAuthenticated, profile?.medications]);
 
   // Auth-gated Navigation:
   // When not signed in: only 'overview', 'about', 'profile' are accessible.
@@ -201,6 +250,7 @@ const AppContent: React.FC = () => {
           <MyMedicationsView
             medications={selectedMedications}
             onRemove={handleRemoveMedication}
+            onAddMedication={handleAddMedication}
             onNavigateToCheck={() => handleNavigate('checker')}
           />
         )}
