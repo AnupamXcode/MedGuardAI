@@ -77,7 +77,7 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-slate-200/80 shadow-xs">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[88px] py-5 flex items-center justify-between gap-6">
         {/* ========================================================= */}
         {/* LEFT: Brand Logo (shrink-0 prevents any overlap) */}
         {/* ========================================================= */}
